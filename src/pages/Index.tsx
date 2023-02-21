@@ -1,6 +1,8 @@
+import Card from "../components/Card"
+
 function Index() {
   return(
-    <div>Index</div>
+    <Card />
   )
 }
 

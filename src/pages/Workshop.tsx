@@ -1,9 +1,12 @@
 import { useParams } from "react-router-dom";
+import Card from "../components/Card";
 
 function Workshop() {
   const { workshopParams } = useParams();
-  const workshopId = parseInt(workshopParams!);// le point d'explamation à pour focntion de 
+  // const workshopId = parseInt(workshopParams!);
 
-  return <div>Workshop { workshopId }</div>;
-}
+  return(
+    <Card />
+  )
+};
 export default Workshop;
