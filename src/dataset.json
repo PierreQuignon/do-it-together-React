@@ -1,0 +1,51 @@
+{
+  "workshops": [
+    { "id": 1,
+    "owner":"Julien25",
+    "title": "Loue atelier de menuiserie",
+    "squareMeter": 25,
+    "content": "Loue atelier suffissament grand pour bricoler à plusieurs. Je souhaite partager des moments conviviaux avec les bricoleurs/loueurs.Je possède divers outils de mesuiserie dont un tour à bois, des perçeuses, une scie circulaire, une scie sauteuse, ect... Prenez contact par téléphone si vous souhaitez en savoir plus.",
+    "electricity":true,
+    "water":true,
+    "location":"6 Boulevard du Général Gaule, 4440 Rezé",
+    "phone":"0688469875",
+    "price": 17
+    },
+
+    { "id": 2,
+    "owner":"Joël",
+    "title": "Atelier de mécanique",
+    "squareMeter": 80,
+    "content": "Je loue un atelier dont je me sers plus beaucoup et qui pourrait servir à de nombreux bricoleurs. J'ai des outils de mécanique mais aussi des outils de l'électro-portatif. Je possède un pont élévateur pour les voitures et une machine à remplacer les pneumatiques",
+    "electricity":true,
+    "water":true,
+    "location":"8 rue Eugène Tessier, 4400 Nantes",
+    "phone":"0766552398",
+    "price": 20
+    },
+
+    { "id": 3,
+    "owner":"Pierre",
+    "title": "Atelier d'art",
+    "squareMeter": 63,
+    "content": "Hello les artistes, si vous cherchez un endroit pour exprimer votre créativité sans tacher les murs de votre appartement mon atelier est fait pour vous! Je possède tout le matériel nécessaire pour la peinture et la sculture (je suis moi même tailleur de pierre). Mon atelier se situe à proximité du centre sur l'île de Nantes et n'attend plus que vous. J'organise aussi des ateliers de taille de pierre pour les débutants qui veulent s'initier",
+    "electricity":true,
+    "water":true,
+    "location":"Bd Gustave Roch, 4400 Nantes",
+    "phone":"0642567496",
+    "price": 13
+    },
+
+    { "id": 4,
+    "owner":"Alain-G",
+    "title": "Loue garage pour bricolage",
+    "squareMeter": 45,
+    "content": "Bonjour la communauté, Je loue mon garage équipé d'un établi et d'un étau. Je mets à disposition les outils principaux (marteaux, tournevis, scie à métaux, limes, ect). Merci de me contacter par téléphone si vous souhaitez plus d'informations.",
+    "electricity":true,
+    "water":true,
+    "location":"3 rue André Maurois, 4470 Carquefou",
+    "phone":"0785326574",
+    "price": 10
+    }
+  ]
+}
