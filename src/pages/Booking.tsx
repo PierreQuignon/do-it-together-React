@@ -1,12 +1,11 @@
 import { useParams } from "react-router-dom";
-import Card from "../components/Card";
 
-function Workshop() {
+function Booking() {
   const { workshopParams } = useParams();
   // const workshopId = parseInt(workshopParams!);
 
   return(
-    <Card />
+    <div></div>
   )
 };
-export default Workshop;
+export default Booking;

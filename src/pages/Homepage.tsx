@@ -1,6 +1,10 @@
+import { Link } from "react-router-dom";
+
 function Homepage() {
   return(
-    <div>Homepage</div>
+    <div>
+      <Link to='/index'>Découvrir les ateliers</Link>
+    </div>
   )
 
 }
