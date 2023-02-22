@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import Workshop from "../components/WorkshopIndex";
+import WorkshopCard from "../components/WorkshopCard";
+import { Link } from "react-router-dom";
 
 export interface Workshop {
   id: number;
@@ -14,24 +15,28 @@ export interface Workshop {
   price: number;
 }
 
-const Index: any = () => {
+const Workshops: any = () => {
   const [workshops, setWorkshops] = useState<Workshop[] | []>([]);
 
   useEffect(() => {
     fetch("./src/dataset.json")
       .then((res) => res.json())
       .then((resJson) => {
-        setWorkshops(resJson.workshops)
+        setWorkshops(resJson.workshops);
       });
   }, []);
 
-  return(
-      <div>
-        {workshops.map((workshop, index) => {
-          return <Workshop key={`${workshop}-${index}`} workshop={workshop}/>
-        })}
-      </div>
+  return (
+    <div>
+      {workshops.map((workshop, index) => {
+        return(
+        <Link to={`/workshop/${workshop.id}`}>
+          <WorkshopCard key={`${workshop}-${index}`} workshop={workshop}/>
+        </Link>
+        )
+      })}
+    </div>
   );
 };
 
-export default Index
+export default Workshops;

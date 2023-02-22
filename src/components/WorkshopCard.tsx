@@ -1,13 +1,15 @@
-import { Workshop as workshopType } from "../pages/Index"
+import { Workshop as workshopType } from "../pages/Workshops";
 import * as React from "react";
 
 interface IWorkshopProps {
   workshop: workshopType;
 }
 
-const Workshop: React.FunctionComponent<IWorkshopProps> = ({ workshop }) => {
+const WorkshopCard: React.FunctionComponent<IWorkshopProps> = ({
+  workshop,
+}) => {
   return (
-    <ul className="border border-black p-2 mb-2 rounded">
+    <ul className="border border-black p-2 rounded m-4">
       <li>Titre: {workshop.title}</li>
       <li>Surface: {workshop.squareMeter}m2</li>
       <li>Prix: {workshop.price}€</li>
@@ -15,4 +17,4 @@ const Workshop: React.FunctionComponent<IWorkshopProps> = ({ workshop }) => {
     </ul>
   );
 };
-export default Workshop;
+export default WorkshopCard;
