@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { FC, FunctionComponent, useEffect, useState } from "react";
 import WorkshopCard from "../components/WorkshopCard";
 import { Link } from "react-router-dom";
 
@@ -15,7 +15,7 @@ export interface Workshop {
   price: number;
 }
 
-const Workshops: any = () => {
+const Workshops: FC = () => {
   const [workshops, setWorkshops] = useState<Workshop[] | []>([]);
 
   useEffect(() => {
@@ -30,8 +30,8 @@ const Workshops: any = () => {
     <div>
       {workshops.map((workshop, index) => {
         return(
-        <Link to={`/workshop/${workshop.id}`}>
-          <WorkshopCard key={`${workshop}-${index}`} workshop={workshop}/>
+        <Link to={`/workshop/${workshop.id}`} key={`${workshop}-${index}`}>
+          <WorkshopCard workshop={workshop}/>
         </Link>
         )
       })}

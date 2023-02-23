@@ -8,25 +8,25 @@ import Header from "./components/Header";
 import "./index.css";
 import Workshop from "./pages/Workshop";
 
-
-
 function App() {
   return (
     <BrowserRouter>
-      <div className="border border-black h-1/5">
-        <Header />
-      </div>
-      <div className="h-3/5">
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="*" element={<Error />} />
-          <Route path="/workshops" element={<Workshops />} />
-          <Route path="/workshop/:workshopId" element={<Workshop/>}/>
-        </Routes>
-      </div>
-      <div className="border border-black h-1/5">
-        <Footer />
+      <div className="bg-amber-50">
+        <div className="border border-black h-1/5">
+          <Header />
+        </div>
+        <div className="h-3/5">
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/about" element={<About />} />
+            <Route path="*" element={<Error />} />
+            <Route path="/workshops" element={<Workshops />} />
+            <Route path="/workshop/:workshopId" element={<Workshop />} />
+          </Routes>
+        </div>
+        <div className="border border-black h-1/5">
+          <Footer />
+        </div>
       </div>
     </BrowserRouter>
   );

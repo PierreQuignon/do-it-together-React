@@ -13,10 +13,10 @@
     },
 
     { "id": 2,
-    "owner":"Joël",
+    "owner":"JuliaNantes",
     "title": "Atelier de mécanique",
     "squareMeter": 80,
-    "content": "Je loue un atelier dont je me sers plus beaucoup et qui pourrait servir à de nombreux bricoleurs. J'ai des outils de mécanique mais aussi des outils de l'électro-portatif. Je possède un pont élévateur pour les voitures et une machine à remplacer les pneumatiques",
+    "content": "Je loue mon atelier de mécanique qui pourrait rendre service à de nombreux bricoleurs. J'ai des outils de mécanique mais aussi des outils électros-portatifs. Je possède un pont élévateur pour les voitures et une machine à remplacer les pneumatiques",
     "electricity":true,
     "water":true,
     "location":"8 rue Eugène Tessier, 4400 Nantes",
@@ -37,7 +37,7 @@
     },
 
     { "id": 4,
-    "owner":"Alain-G",
+    "owner":"Léa",
     "title": "Loue garage pour bricolage",
     "squareMeter": 45,
     "content": "Bonjour la communauté, Je loue mon garage équipé d'un établi et d'un étau. Je mets à disposition les outils principaux (marteaux, tournevis, scie à métaux, limes, ect). Merci de me contacter par téléphone si vous souhaitez plus d'informations.",

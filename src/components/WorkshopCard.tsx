@@ -1,11 +1,11 @@
 import { Workshop as workshopType } from "../pages/Workshops";
-import * as React from "react";
+import { FC } from "react";
 
 interface IWorkshopProps {
   workshop: workshopType;
 }
 
-const WorkshopCard: React.FunctionComponent<IWorkshopProps> = ({
+const WorkshopCard: FC<IWorkshopProps> = ({
   workshop,
 }) => {
   return (

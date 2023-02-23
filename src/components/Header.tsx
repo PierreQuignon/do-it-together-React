@@ -4,8 +4,8 @@ function Header() {
   return(
     <>
     <h1>Do It Together</h1>
-    <Link to="/">Page d'accueil</Link>
-    <Link to="/about">à propos</Link>
+    <Link className="p-px border border-black rounded" to="/">Page d'accueil</Link>
+    <Link className="p-px border border-black rounded ml-1" to="/about">à propos</Link>
     </>
   )
 };
