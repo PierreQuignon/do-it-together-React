@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Workshop as workshopType } from "./Workshops";
 
+
 function Workshop() {
   const [workshopTargeted, setWorkshopTargeted] = useState<workshopType[] | []>(
     []
@@ -31,9 +32,9 @@ function Workshop() {
               <li>Adresse: {workshop.location}</li>
               <li>{workshop.content}</li>
               <li>Surface: {workshop.squareMeter}m2</li>
-              <li>Electricité: {workshop.electricity? "Oui" : "Non"}</li>
-              <li>Point d'eau: {workshop.water? "Oui" : "Non"}</li>
-              <li>Prix: {workshop.price}€</li>
+              <li>Electricité {workshop.electricity? <i className="fa-regular fa-square-check"></i> : <i className="fa-sharp fa-regular fa-square"></i>}</li>
+              <li>Point d'eau {workshop.water? <i className="fa-regular fa-square-check"></i> : <i className="fa-sharp fa-regular fa-square"></i>}</li>
+              <li>Prix: {workshop.price}€/jour</li>
               <li>Loueur: {workshop.owner}</li>
               <li>Contact: {workshop.phone}</li>
             </ul>
