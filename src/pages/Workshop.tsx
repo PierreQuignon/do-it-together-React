@@ -1,25 +1,16 @@
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import WorkshopDetails from "../components/WorkshopDetails";
+import { Workshop } from "./Workshops";
 
-function Workshop() {
+
+const Workshop: any = () => {
   const { workshopId } = useParams<{ workshopId: string }>();
-  const idNumber = parseInt(workshopId!)
+  console.log(workshopId)
 
   return(
-    <div>
-      {workshops.map((workshop, index) => {
-        return(
-          <div>
-            <WorkshopDetails key={`${workshop}-${index}`} workshop={workshop}/>
-          </div>
-        )
-      })}
-    {idNumber}
     <Link to="/workshops">
       Retour
     </Link>
-  </div>
-  )
+  );
 };
 export default Workshop;
