@@ -2,12 +2,14 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Workshop as workshopType } from "./Workshops";
+import ModalBooking from "../components/ModalBooking";
 
 
 function Workshop() {
   const [workshopTargeted, setWorkshopTargeted] = useState<workshopType[] | []>(
     []
   );
+  const [openModal, setOpenModal] = useState<boolean>(false);
   const { workshopId } = useParams<{ workshopId: string }>();
 
   useEffect(() => {
@@ -40,7 +42,7 @@ function Workshop() {
             </ul>
           );
         })}
-        <button onClick={()}>Réserver</button>
+        <ModalBooking open={openModal}/>
       </div>
     </>
   );
