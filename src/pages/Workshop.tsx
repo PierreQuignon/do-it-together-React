@@ -40,6 +40,7 @@ function Workshop() {
             </ul>
           );
         })}
+        <button onClick={()}>Réserver</button>
       </div>
     </>
   );
