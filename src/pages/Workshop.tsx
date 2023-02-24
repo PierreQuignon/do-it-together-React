@@ -10,6 +10,7 @@ function Workshop() {
     []
   );
   const [openModal, setOpenModal] = useState<boolean>(false);
+  console.log('openModal', openModal)
   const { workshopId } = useParams<{ workshopId: string }>();
 
   useEffect(() => {
@@ -26,7 +27,7 @@ function Workshop() {
   return (
     <>
       <div>
-      <Link className="p-px border border-black rounded" to="/workshops">Retour</Link>
+      <Link className="p-px border border-black rounded m-2" to="/workshops">Retour</Link>
         {workshopTargeted.map((workshop, index) => {
           return (
             <ul key={index}>
@@ -42,7 +43,8 @@ function Workshop() {
             </ul>
           );
         })}
-        <ModalBooking open={openModal}/>
+        <button className="p-px border border-black rounded m-2" onClick={() => setOpenModal(true)}>Réserver</button>
+        <ModalBooking open={openModal} onClose={() => setOpenModal(false)} />
       </div>
     </>
   );
