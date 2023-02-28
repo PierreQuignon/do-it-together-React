@@ -1,11 +1,13 @@
 import { FC, useState } from "react";
 import { Workshop as workshopType } from "../pages/Workshops";
-import { DatePicker, Space } from "antd";
+import { DatePicker } from "antd";
+import moment from "moment";
 
 interface IWorkshopProps {
   open: boolean;
   onClose: () => void;
   workshopTargeted: workshopType[] | [];
+
 }
 
 const { RangePicker } = DatePicker;
@@ -15,9 +17,9 @@ const ModalBooking: FC<IWorkshopProps> = ({
   onClose,
   workshopTargeted,
 }) => {
-  const [dates, setDates] = useState([]);
+  const [dates, setDates] = useState<string[]>([]);
   console.log(dates);
-  
+
 
   if (!open) return null;
 
@@ -29,10 +31,20 @@ const ModalBooking: FC<IWorkshopProps> = ({
             <button className="border border-black w-6 m-2" onClick={onClose}>
               X
             </button>
-            {workshopTargeted.map((workshop) => {
-              return <p>Prix : {workshop.price}€/jour</p>;
+            {workshopTargeted.map((workshop, index) => {
+              return <p key={index}>Prix : {workshop.price}€/jour</p>;
             })}
-            <RangePicker onChange={(values) => setDates(values)} />
+            <RangePicker
+              onChange={(values) => {
+                if (values) {
+                  setDates(
+                    values.map((item) => {
+                      return moment(item!.toDate()).format("DD-MM-YYYY");
+                    })
+                  );
+                }
+              }}
+            />
             <button className="border border-black p-1 rounded-md">
               Réserver
             </button>
