@@ -9,7 +9,6 @@ function Workshop() {
     []
   );
   const [openModal, setOpenModal] = useState<boolean>(false);
-  console.log("openModal", openModal);
   const { workshopId } = useParams<{ workshopId: string }>();
 
   useEffect(() => {
@@ -58,15 +57,19 @@ function Workshop() {
             </ul>
           );
         })}
-          <div>
-            <button
-              className="p-px border border-black rounded m-2"
-              onClick={() => setOpenModal(true)}
-            >
-              Réserver
-            </button>
-            <ModalBooking open={openModal} onClose={() => setOpenModal(false)} />
-          </div>
+        <div>
+          <button
+            className="p-px border border-black rounded m-2"
+            onClick={() => setOpenModal(true)}
+          >
+            Réserver
+          </button>
+          <ModalBooking
+            workshopTargeted={workshopTargeted}
+            open={openModal}
+            onClose={() => setOpenModal(false)}
+          />
+        </div>
       </div>
     </>
   );

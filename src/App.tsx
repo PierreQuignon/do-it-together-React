@@ -12,10 +12,10 @@ function App() {
   return (
     <BrowserRouter>
       <div className="bg-amber-50">
-        <div className="border border-black h-1/5">
+        <div className="border border-black">
           <Header />
         </div>
-        <div className="h-3/5">
+        <div>
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/about" element={<About />} />
@@ -24,7 +24,7 @@ function App() {
             <Route path="/workshop/:workshopId" element={<Workshop />} />
           </Routes>
         </div>
-        <div className="border border-black h-1/5">
+        <div className="border border-black">
           <Footer />
         </div>
       </div>
