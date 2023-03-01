@@ -7,15 +7,18 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import "./index.css";
 import Workshop from "./pages/Workshop";
+import "./style/Header.css"
+import "./style/Footer.css"
+import "./style/App.css"
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="bg-amber-50">
-        <div className="border border-black">
+      <div className="background-app">
+        <div className="header-container">
           <Header />
         </div>
-        <div>
+        <div className="body-container">
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/about" element={<About />} />
@@ -24,7 +27,7 @@ function App() {
             <Route path="/workshop/:workshopId" element={<Workshop />} />
           </Routes>
         </div>
-        <div className="border border-black">
+        <div className="footer-container">
           <Footer />
         </div>
       </div>

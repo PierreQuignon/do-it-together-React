@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Workshop as workshopType } from "./Workshops";
 import ModalBooking from "../components/ModalBooking";
+import "../style/Modal.css";
+import "../style/App.css";
+import "../style/Workshop.css";
 
 function Workshop() {
   const [workshopTargeted, setWorkshopTargeted] = useState<workshopType[] | []>(
@@ -25,7 +28,7 @@ function Workshop() {
   return (
     <>
       <div>
-        <Link className="p-px border border-black rounded m-2" to="/workshops">
+        <Link className="btn-style-1" to="/workshops">
           Retour
         </Link>
         {workshopTargeted.map((workshop, index) => {
@@ -59,7 +62,7 @@ function Workshop() {
         })}
         <div>
           <button
-            className="p-px border border-black rounded m-2"
+            className="btn-booking-workshop"
             onClick={() => setOpenModal(true)}
           >
             Réserver

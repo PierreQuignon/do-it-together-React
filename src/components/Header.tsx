@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import "../style/App.css";
 
 function Header() {
   return(
     <>
     <h1>Do It Together</h1>
-    <Link className="p-px border border-black rounded" to="/">Page d'accueil</Link>
-    <Link className="p-px border border-black rounded ml-1" to="/about">à propos</Link>
+    <Link className="btn-style-1" to="/">Page d'accueil</Link>
+    <Link className="btn-style-1" to="/about">à propos</Link>
     </>
   )
 };
