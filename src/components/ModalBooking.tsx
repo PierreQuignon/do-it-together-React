@@ -2,12 +2,12 @@ import { FC, useState } from "react";
 import { Workshop as workshopType } from "../pages/Workshops";
 import { DatePicker } from "antd";
 import moment from "moment";
+import "../style/Modal.css"
 
 interface IWorkshopProps {
   open: boolean;
   onClose: () => void;
   workshopTargeted: workshopType[] | [];
-
 }
 
 const { RangePicker } = DatePicker;
@@ -17,9 +17,11 @@ const ModalBooking: FC<IWorkshopProps> = ({
   onClose,
   workshopTargeted,
 }) => {
-  const [dates, setDates] = useState<string[]>([]);
-  console.log(dates);
-
+  const [duration, setDuration] = useState<number>(0);
+  const [totalPrice, setTotalPrice] = useState<number>(0);
+  function bookingAlert() {
+    alert("Merci de votre réservation");
+  }
 
   if (!open) return null;
 
@@ -28,27 +30,36 @@ const ModalBooking: FC<IWorkshopProps> = ({
       <div>
         <div className=" bg-amber-50 w-96 border border-black mx-auto mb-5">
           <div>
-            <button className="border border-black w-6 m-2" onClick={onClose}>
-              X
+            <button className="m-1" onClick={onClose}>
+            <i className="fa-regular fa-circle-xmark"></i>
             </button>
             {workshopTargeted.map((workshop, index) => {
               return <p key={index}>Prix : {workshop.price}€/jour</p>;
             })}
-            <RangePicker
-              onChange={(values) => {
-                if (values) {
-                  setDates(
-                    values.map((item) => {
-                      return moment(item!.toDate()).format("DD-MM-YYYY");
-                    })
-                  );
-                }
-              }}
-            />
-            <button className="border border-black p-1 rounded-md">
+            <div className="m-2">
+              <RangePicker
+                placeholder={["Date de début", "Date de fin"]}
+                suffixIcon={<></>}
+                format='DD-MM-YYYY'
+                onChange={(values) => {
+                  if (values) {
+                    const start = values[0];
+                    const end = values[1];
+                    const duration = moment.duration(end!.diff(start)).asDays();
+                    setDuration(duration);
+                    setTotalPrice(workshopTargeted[0].price*duration)
+                  }
+                  else {
+                    setDuration(0);
+                    setTotalPrice(0);
+                  }
+                }}
+              />
+            </div>
+            <p>Montant total de votre réservation : { totalPrice } €</p>
+            <button className="btn-booking-modal" onClick={() => bookingAlert()}>
               Réserver
             </button>
-            <p>Aucun montant ne vous sera débité pour le moment</p>
           </div>
         </div>
       </div>
