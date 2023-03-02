@@ -6,33 +6,28 @@ import "../style/Modal.css";
 import "../style/App.css";
 
 interface IWorkshopProps {
-  open: boolean;
-  onClose: () => void;
   workshopTargeted: workshopType[] | [];
+  close: () => void;
 }
 
 const { RangePicker } = DatePicker;
 
-const ModalBooking: FC<IWorkshopProps> = ({
-  open,
-  onClose,
-  workshopTargeted,
-}) => {
+const ModalBooking: FC<IWorkshopProps> = ({ workshopTargeted, close }) => {
   const [duration, setDuration] = useState<number>(0);
   const [totalPrice, setTotalPrice] = useState<number>(0);
 
   function bookingAlert() {
-    if (duration > 0)
-      return alert("Do It Together vous remercie de votre réservation 🎉😃");
+    if (duration > 0) {
+        close();
+        alert("Do It Together vous remercie de votre réservation 🎉😃");
+    }
   }
-
-  if (!open) return null;
 
   return (
     <>
-      <div className="overlay" onClick={onClose}></div>
+      <div className="overlay"></div>
       <div className="modal-container">
-        <button className="btn-close" onClick={onClose}>
+        <button className="btn-close" onClick={close}>
           <i className="fa-regular fa-circle-xmark"></i>
         </button>
         <div className="content-modal-container">
@@ -58,7 +53,7 @@ const ModalBooking: FC<IWorkshopProps> = ({
             />
           </div>
           <p>Montant total de votre réservation : {totalPrice} €</p>
-          <button className="btn-style-1" onClick={() => bookingAlert()}>
+          <button className="btn-style-1" onClick={bookingAlert}>
             Réserver
           </button>
         </div>

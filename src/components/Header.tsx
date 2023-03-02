@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 import "../style/App.css";
+import Logo from "./Logo";
 
 function Header() {
   return(
     <>
-    <h1>Do It Together</h1>
+    <div>
     <Link className="btn-style-1" to="/">Page d'accueil</Link>
     <Link className="btn-style-1" to="/about">à propos</Link>
+    </div>
+    <Logo />
     </>
   )
 };

@@ -1,0 +1,45 @@
+.rotation-logo {
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 8s linear infinite;
+  -moz-animation:spin 8s linear infinite;
+  animation: spin 8s linear infinite;
+}
+
+@-webkit-keyframes spin{
+  100%{-webkit-transform: rotate(360deg);}
+}
+
+@-moz-keyframes spin{
+  100%{-webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin{
+  100%{-webkit-transform: rotate(360deg);}
+}
+
+.logo-container {
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 101px;
+  top:20px;
+  right:20px;
+  border-radius: 30px;
+  background-color: rgb(255 181 0 / 49%);
+  line-height: 16px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
+}
+
+.do-it-logo {
+  font-size: 16px;
+  color: orangered;
+  font-family: 'Tilt Warp';
+}
+
+.together-logo {
+  font-size: 16px;
+  color: orangered;
+  font-family: 'Tilt Warp';
+}

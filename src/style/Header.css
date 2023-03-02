@@ -1,5 +1,8 @@
 .header-container{
   border: solid;
+  display: flex;
+  justify-content: space-between;
   border-width: 1px;
-  padding:8px
+  padding:8px;
+  height: 120px;
 }

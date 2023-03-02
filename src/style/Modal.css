@@ -2,6 +2,8 @@
   border: solid;
   border-width: 1px;
   padding: 4px;
+  padding-top: 1px;
+  padding-bottom: 1px;
   border-radius: 5px;
   margin: 8px;
 }
@@ -21,8 +23,12 @@
   padding:8px;
   line-height: 35px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+  transition: 0.6s all ease-in-out;;
   transform: translate(-50%, -100vw);
-  transition: 0.3s all ease-in-out;
+}
+
+.modal-show {
+  transform: translate(-50%, -50%);
 }
 
 .content-modal-container {
@@ -31,8 +37,16 @@ text-align: center;
 
 .btn-close {
   position:absolute;
-  top:5px;
-  left:8px;
+  top:3px;
+  left:12px;
+}
+
+.btn-close:hover {
+  position:absolute;
+  top:3px;
+  left:12px;
+  color:red;
+  transition:0.3s;
 }
 
 .overlay {
@@ -42,4 +56,20 @@ text-align: center;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
+  display:none;
+  transition: 0.3s all ease-in-out;
+}
+
+.ant-picker.ant-picker-range.css-dev-only-do-not-override-10ed4xt.ant-picker-focused {
+  border-color: #000000ba;
+  box-shadow: 0 0 0 2px rgb(0 0 0 / 6%);
+}
+
+.ant-picker-body {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 251 235 / var(--tw-bg-opacity));
+}
+
+.ant-picker-header {
+  background-color:#ffa500c2;
 }

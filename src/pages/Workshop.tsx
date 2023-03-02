@@ -11,7 +11,6 @@ function Workshop() {
   const [workshopTargeted, setWorkshopTargeted] = useState<workshopType[] | []>(
     []
   );
-  const [openModal, setOpenModal] = useState<boolean>(false);
   const { workshopId } = useParams<{ workshopId: string }>();
 
   useEffect(() => {
@@ -24,6 +23,20 @@ function Workshop() {
       })
       .then((finalResult) => setWorkshopTargeted(finalResult));
   }, []);
+
+  function openModal() {
+    const overlay = document.querySelector('.overlay') as HTMLElement;
+    overlay.style.display = 'block';
+    const modalContainer = document.querySelector('.modal-container') as HTMLElement;
+    modalContainer.classList.add('modal-show');
+  }
+
+   function closeModal() {
+    const overlay = document.querySelector('.overlay') as HTMLElement;
+    overlay.style.display = 'none';
+    const modalContainer = document.querySelector('.modal-container') as HTMLElement;
+    modalContainer.classList.remove('modal-show');
+  }
 
   return (
     <>
@@ -63,14 +76,15 @@ function Workshop() {
         <div>
           <button
             className="btn-booking-workshop"
-            onClick={() => setOpenModal(true)}
+            onClick={() => {
+              openModal()
+            }}
           >
             Réserver
           </button>
           <ModalBooking
             workshopTargeted={workshopTargeted}
-            open={openModal}
-            onClose={() => setOpenModal(false)}
+            close={closeModal}
           />
         </div>
       </div>
