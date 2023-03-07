@@ -13,6 +13,8 @@ export interface Workshop {
   location: string;
   phone: string;
   price: number;
+  rating: number;
+  category:string;
 }
 
 const Workshops: FC = () => {
