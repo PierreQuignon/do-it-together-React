@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import "../style/Filters.css";
 
 interface categoriesProps {
@@ -6,7 +6,8 @@ interface categoriesProps {
 }
 
 const Filters: FC<categoriesProps> = ({ setActiveCategories }) => {
-  
+  const [isToggled, setIsToggled] = useState<boolean>(false);
+
   function addCategory(categ: string) {
     setActiveCategories((currentCategories: string[]): string[] => [
       ...currentCategories,
@@ -14,10 +15,31 @@ const Filters: FC<categoriesProps> = ({ setActiveCategories }) => {
     ]);
   }
 
+  useEffect(() => {
+    let timeout;
+
+    if (isToggled) {
+      timeout = setTimeout(() => {
+        setIsToggled(false);
+      }, 1000);
+    }
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [isToggled]);
+
+  const handleClick = () => {
+    setIsToggled(!isToggled);
+  };
+
   return (
     <>
       <div className="tags-categories-container">
-        <button className="tag-filter" onClick={() => addCategory("Mécanique")}>
+        <button className="tag-filter" onClick={() =>
+        {addCategory("Mécanique")
+        handleClick()}
+      }>
           Mécanique
         </button>
         <button
