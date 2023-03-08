@@ -1,4 +1,5 @@
 .footer-container{
-  border: solid;
+  border-top: solid;
   border-width: 1px;
+  height: 80px;
 }

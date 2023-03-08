@@ -1,6 +1,8 @@
+import '../style/About.css'
+
 function About() {
   return(
-    <>
+    <div className='about-container'>
     <h1>"Partagez un moment de bricolage convivial tout en gagnant de l'argent"</h1>
     <br />
     <p>Tel est l'objectif de <strong>Do It Together.</strong>Tous les passionné(e)s de bricolage habitant en ville et dans un logement dépourvu de garage comprendrons la frustration de ne pas pouvoir bricoler lorsqu'ils ou elles en ressentent le besoin.</p>
@@ -14,7 +16,7 @@ function About() {
     <br />
     <h2>"Bricolez à moindre coût à deux pas de chez vous"</h2>
     <p>C'est la motiviation première qui est à l'origine de cette application. A l'heure actuelle, il est très compliqué de posséder un logement équipé d'un garage prêt d'une grande villes par faute de budjet. Avec l'application <strong>Do It Together</strong>tout le monde peut accéder à un atelier équipé à moindre coût, sans engagement et prêt de chez chez soit.</p>
-    </>
+    </div>
   )
 }
 

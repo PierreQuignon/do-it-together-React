@@ -11,7 +11,7 @@
     "phone":"0688469875",
     "price": 17,
     "rating": 4,
-    "category":"menuiserie"
+    "category":"Menuiserie"
     },
 
     { "id": 2,
@@ -25,7 +25,7 @@
     "phone":"0766552398",
     "price": 20,
     "rating": 5,
-    "category":"mécanique"
+    "category":"Mécanique"
     },
 
     { "id": 3,
@@ -39,7 +39,7 @@
     "phone":"0642567496",
     "price": 13,
     "rating": 4,
-    "category":["peinture", "sculture"]
+    "category":["Peinture", "Sculture"]
     },
 
     { "id": 4,
@@ -53,7 +53,7 @@
     "phone":"0785326574",
     "price": 10,
     "rating": 5,
-    "category":"général"
+    "category":"Général"
     }
   ]
 }

@@ -7,14 +7,14 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import "./index.css";
 import Workshop from "./pages/Workshop";
-import "./style/Header.css"
-import "./style/Footer.css"
-import "./style/App.css"
+import "./style/Header.css";
+import "./style/Footer.css";
+import "./style/App.css";
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="background-app">
+      <div className="container-app">
         <div className="header-container">
           <Header />
         </div>

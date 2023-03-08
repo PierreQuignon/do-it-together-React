@@ -8,6 +8,7 @@ function Header() {
     <Link className="btn-style-1" to="/">Page d'accueil</Link>
     <Link className="btn-style-1" to="/about">à propos</Link>
     </div>
+    <h1 className="title-header">Do It Together</h1>
     </>
   )
 };

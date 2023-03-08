@@ -18,7 +18,7 @@
   border-width: 1px;
   border-radius: 10px;
   --tw-bg-opacity: 1;
-  background-color: rgb(255 251 235 / var(--tw-bg-opacity));
+  background-color: white;
   position: relative;
   padding:8px;
   line-height: 35px;
@@ -63,13 +63,4 @@ text-align: center;
 .ant-picker.ant-picker-range.css-dev-only-do-not-override-10ed4xt.ant-picker-focused {
   border-color: #000000ba;
   box-shadow: 0 0 0 2px rgb(0 0 0 / 6%);
-}
-
-.ant-picker-body {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 251 235 / var(--tw-bg-opacity));
-}
-
-.ant-picker-header {
-  background-color:#ffa500c2;
 }

@@ -6,11 +6,11 @@
   margin: 8px;
 }
 
-.background-app {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 251 235 / var(--tw-bg-opacity));
-}
-
 .body-container {
   padding: 10px;
+}
+
+.container-app {
+  display: flex;
+  flex-direction: column;
 }

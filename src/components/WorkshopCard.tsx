@@ -5,8 +5,10 @@ interface IWorkshopProps {
   workshop: workshopType;
 }
 
+
 const WorkshopCard: FC<IWorkshopProps> = ({ workshop }) => {
   return (
+
     <ul className="border border-black p-2 rounded m-4">
       <li>Titre: {workshop.title}</li>
       <li>Surface: {workshop.squareMeter}m2</li>

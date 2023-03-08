@@ -4,5 +4,10 @@
   justify-content: space-between;
   border-width: 1px;
   padding:8px;
-  height: 120px;
+  height: 90px;
+}
+
+.title-header {
+  font-size: 20px;
+  font-weight: 600;
 }
