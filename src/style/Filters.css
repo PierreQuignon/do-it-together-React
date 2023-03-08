@@ -14,3 +14,20 @@
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
+.reinitialized-btn {
+  border: solid;
+  border-width: 1px;
+  padding: 2px;
+  margin: 2px;
+  border-radius: 8px;
+}
+
+.reinitialized-btn:hover {
+  border: solid;
+  border-width: 1px;
+  padding: 2px;
+  margin: 2px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}

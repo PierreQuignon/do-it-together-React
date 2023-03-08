@@ -1,27 +1,64 @@
 import { FC } from "react";
-import "../style/Filters.css"
+import "../style/Filters.css";
 
+interface categoriesProps {
+  setActiveCategories: React.Dispatch<React.SetStateAction<string[]>>;
+}
 
-type SetActiveCategories = (categories: string[]) => void;
-
-
-const Filters: FC<{ setActiveCategories: SetActiveCategories }> = ({setActiveCategories}) => {
-
+const Filters: FC<categoriesProps> = ({ setActiveCategories }) => {
+  
+  function addCategory(categ: string) {
+    setActiveCategories((currentCategories: string[]): string[] => [
+      ...currentCategories,
+      categ,
+    ]);
+  }
 
   return (
     <>
-    <div className='tags-categories-container'>
-      <button className="tag-filter" onClick={() => setActiveCategories(["Mécanique"])}>Mécanique</button>
-      <button className="tag-filter">Menuiserie</button>
-      <button className="tag-filter">Couture/maroquinerie</button>
-      <button className="tag-filter">Général</button>
-      <button className="tag-filter">Sculpture</button>
-      <button className="tag-filter">Peinture</button>
-      <button className="tag-filter">Métallerie</button>
-      <button className="tag-filter">Poterie</button>
-    </div>
+      <div className="tags-categories-container">
+        <button className="tag-filter" onClick={() => addCategory("Mécanique")}>
+          Mécanique
+        </button>
+        <button
+          className="tag-filter"
+          onClick={() => addCategory("Menuiserie")}
+        >
+          Menuiserie
+        </button>
+        <button
+          className="tag-filter"
+          onClick={() => addCategory("Couture/Maroquinerie")}
+        >
+          Couture/Maroquinerie
+        </button>
+        <button className="tag-filter" onClick={() => addCategory("Général")}>
+          Général
+        </button>
+        <button className="tag-filter" onClick={() => addCategory("Sculpture")}>
+          Sculpture
+        </button>
+        <button className="tag-filter" onClick={() => addCategory("Peinture")}>
+          Peinture
+        </button>
+        <button
+          className="tag-filter"
+          onClick={() => addCategory("Métallerie")}
+        >
+          Métallerie
+        </button>
+        <button className="tag-filter" onClick={() => addCategory("Poterie")}>
+          Poterie
+        </button>
+        <button
+          className="reinitialized-btn"
+          onClick={() => setActiveCategories([])}
+        >
+          Réinitialiser
+        </button>
+      </div>
     </>
-  )
-}
+  );
+};
 
 export default Filters;

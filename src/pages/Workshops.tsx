@@ -18,18 +18,15 @@ export interface Workshop {
   category: string;
 }
 
-type SetActiveCategories = (category: string[]) => void;
-
 const Workshops: FC<Workshop> = () => {
   const [workshops, setWorkshops] = useState<Workshop[]>([]);
-  const categories:string[] = workshops.reduce<string[]>(
+  const categories: string[] = workshops.reduce<string[]>(
     (acc: string[], workshop: Workshop) =>
       acc.includes(workshop.category) ? acc : acc.concat(workshop.category),
     []
   );
-  const [activeCategories, setActiveCategories]=useState<string[]>([])
-  console.log(activeCategories);
-  
+
+  const [activeCategories, setActiveCategories] = useState(categories);
 
 
   useEffect(() => {
@@ -42,13 +39,14 @@ const Workshops: FC<Workshop> = () => {
 
   return (
     <div>
-      <Filters setActiveCategories={ setActiveCategories }/>
+      <Filters setActiveCategories={setActiveCategories} />
       {workshops.map((workshop, index) => {
-        return (
+        const { category } = workshop;
+        return !activeCategories || activeCategories.includes(category) ? (
           <Link to={`/workshop/${workshop.id}`} key={`${workshop}-${index}`}>
             <WorkshopCard workshop={workshop} />
           </Link>
-        );
+        ) : null;
       })}
     </div>
   );
