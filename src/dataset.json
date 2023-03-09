@@ -39,7 +39,7 @@
     "phone":"0642567496",
     "price": 13,
     "rating": 4,
-    "category":["Peinture", "Sculture"]
+    "category":"Sculpture"
     },
 
     { "id": 4,

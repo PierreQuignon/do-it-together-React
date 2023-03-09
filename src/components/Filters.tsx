@@ -1,45 +1,27 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import "../style/Filters.css";
 
 interface categoriesProps {
   setActiveCategories: React.Dispatch<React.SetStateAction<string[]>>;
+  activeCategories: string[];
 }
 
-const Filters: FC<categoriesProps> = ({ setActiveCategories }) => {
-  const [isToggled, setIsToggled] = useState<boolean>(false);
-
+const Filters: FC<categoriesProps> = ({
+  setActiveCategories,
+  activeCategories,
+}) => {
   function addCategory(categ: string) {
-    setActiveCategories((currentCategories: string[]): string[] => [
-      ...currentCategories,
-      categ,
-    ]);
+    if (activeCategories.includes(categ)) {
+      setActiveCategories([categ]);
+    }
   }
 
-  useEffect(() => {
-    let timeout;
-
-    if (isToggled) {
-      timeout = setTimeout(() => {
-        setIsToggled(false);
-      }, 1000);
-    }
-
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, [isToggled]);
-
-  const handleClick = () => {
-    setIsToggled(!isToggled);
-  };
+  console.log("activeCategories", activeCategories);
 
   return (
     <>
       <div className="tags-categories-container">
-        <button className="tag-filter" onClick={() =>
-        {addCategory("Mécanique")
-        handleClick()}
-      }>
+        <button className="tag-filter" onClick={() => addCategory("Mécanique")}>
           Mécanique
         </button>
         <button

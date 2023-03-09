@@ -1,4 +1,4 @@
-import { FC, FunctionComponent, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import WorkshopCard from "../components/WorkshopCard";
 import { Link } from "react-router-dom";
 import Filters from "../components/Filters";
@@ -20,13 +20,9 @@ export interface Workshop {
 
 const Workshops: FC<Workshop> = () => {
   const [workshops, setWorkshops] = useState<Workshop[]>([]);
-  const categories: string[] = workshops.reduce<string[]>(
-    (acc: string[], workshop: Workshop) =>
-      acc.includes(workshop.category) ? acc : acc.concat(workshop.category),
-    []
-  );
 
-  const [activeCategories, setActiveCategories] = useState(categories);
+  const [activeCategories, setActiveCategories] = useState<Array<string>>([]);
+  console.log(activeCategories);
 
 
   useEffect(() => {
@@ -34,15 +30,22 @@ const Workshops: FC<Workshop> = () => {
       .then((res) => res.json())
       .then((resJson) => {
         setWorkshops(resJson.workshops);
+
+        const categories: string[] = resJson.workshops.reduce(
+          (acc: string[], workshop: Workshop) =>
+            acc.includes(workshop.category) ? acc : acc.concat(workshop.category),
+            []
+        );
+        setActiveCategories(categories);
       });
   }, []);
 
   return (
     <div>
-      <Filters setActiveCategories={setActiveCategories} />
+      <Filters setActiveCategories={setActiveCategories} activeCategories={activeCategories}/>
       {workshops.map((workshop, index) => {
         const { category } = workshop;
-        return !activeCategories || activeCategories.includes(category) ? (
+        return !activeCategories.length || activeCategories.includes(category) ? (
           <Link to={`/workshop/${workshop.id}`} key={`${workshop}-${index}`}>
             <WorkshopCard workshop={workshop} />
           </Link>
