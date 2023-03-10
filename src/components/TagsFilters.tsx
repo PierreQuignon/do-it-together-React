@@ -6,7 +6,7 @@ interface categoriesProps {
   activeCategories: string[];
 }
 
-const Filters: FC<categoriesProps> = ({
+const TagsFilters: FC<categoriesProps> = ({
   setActiveCategories,
   activeCategories,
 }) => {
@@ -18,10 +18,10 @@ const Filters: FC<categoriesProps> = ({
     }
   }
 
-  const [mecaToggled, setMecaToggled] = useState(false);
-  const [menuiToggled, setMenuiToggled] = useState(false);
-  const [geneToggled, setGeneToggled] = useState(false);
-  const [sculToggled, setSculToggled] = useState(false)
+  const [mecaToggled, setMecaToggled] = useState<boolean>(false);
+  const [menuiToggled, setMenuiToggled] = useState<boolean>(false);
+  const [geneToggled, setGeneToggled] = useState<boolean>(false);
+  const [sculToggled, setSculToggled] = useState<boolean>(false)
 
 
   return (
@@ -50,4 +50,4 @@ const Filters: FC<categoriesProps> = ({
   );
 };
 
-export default Filters;
+export default TagsFilters;

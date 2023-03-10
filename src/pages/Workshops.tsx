@@ -1,7 +1,8 @@
 import { FC, useEffect, useState } from "react";
 import WorkshopCard from "../components/WorkshopCard";
 import { Link } from "react-router-dom";
-import Filters from "../components/Filters";
+import TagsFilters from "../components/TagsFilters";
+import CursorFilter from "../components/CursorFilter";
 
 export interface Workshop {
   id: number;
@@ -35,7 +36,7 @@ const Workshops: FC = () => {
 
   return (
     <div>
-      <Filters setActiveCategories={setActiveCategories} activeCategories={activeCategories}/>
+      <TagsFilters setActiveCategories={setActiveCategories} activeCategories={activeCategories}/>
       {workshops.map((workshop, index) => {
         const { category } = workshop;
         return !activeCategories.length || activeCategories.includes(category) ? (
@@ -44,6 +45,7 @@ const Workshops: FC = () => {
           </Link>
         ) : null;
       })}
+      <CursorFilter />
     </div>
   );
 };
