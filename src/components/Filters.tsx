@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import "../style/Filters.css";
 
 interface categoriesProps {
@@ -12,16 +12,23 @@ const Filters: FC<categoriesProps> = ({
 }) => {
   function addCategory(categ: string) {
     if (activeCategories.includes(categ)) {
-      setActiveCategories([categ]);
+      setActiveCategories(activeCategories.filter((cat) => cat !== categ));
+    } else {
+      setActiveCategories([...activeCategories, categ]);
     }
   }
 
-  console.log("activeCategories", activeCategories);
+  const [isToggled, setIsToggled] = useState(false);
+
+  const handleClick = () => {
+    setIsToggled(prevState => !prevState);
+  };
+
 
   return (
     <>
       <div className="tags-categories-container">
-        <button className="tag-filter" onClick={() => addCategory("Mécanique")}>
+        <button className={isToggled? 'toggled-class': 'tag-filter'} onClick={() => {addCategory("Mécanique"); handleClick()}}>
           Mécanique
         </button>
         <button

@@ -18,11 +18,10 @@ export interface Workshop {
   category: string;
 }
 
-const Workshops: FC<Workshop> = () => {
+const Workshops: FC = () => {
   const [workshops, setWorkshops] = useState<Workshop[]>([]);
 
   const [activeCategories, setActiveCategories] = useState<Array<string>>([]);
-  console.log(activeCategories);
 
 
   useEffect(() => {
