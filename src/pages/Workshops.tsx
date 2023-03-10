@@ -22,6 +22,7 @@ const Workshops: FC = () => {
   const [workshops, setWorkshops] = useState<Workshop[]>([]);
 
   const [activeCategories, setActiveCategories] = useState<Array<string>>([]);
+  console.log('activeCategories', activeCategories);
 
 
   useEffect(() => {
@@ -29,13 +30,6 @@ const Workshops: FC = () => {
       .then((res) => res.json())
       .then((resJson) => {
         setWorkshops(resJson.workshops);
-
-        const categories: string[] = resJson.workshops.reduce(
-          (acc: string[], workshop: Workshop) =>
-            acc.includes(workshop.category) ? acc : acc.concat(workshop.category),
-            []
-        );
-        setActiveCategories(categories);
       });
   }, []);
 
