@@ -35,8 +35,11 @@ const Workshops: FC = () => {
   }, []);
 
   return (
-    <div>
+    <div> 
+      <div className="filters-container">
       <TagsFilters setActiveCategories={setActiveCategories} activeCategories={activeCategories}/>
+      <CursorFilter />
+      </div>
       {workshops.map((workshop, index) => {
         const { category } = workshop;
         return !activeCategories.length || activeCategories.includes(category) ? (
@@ -45,7 +48,6 @@ const Workshops: FC = () => {
           </Link>
         ) : null;
       })}
-      <CursorFilter />
     </div>
   );
 };

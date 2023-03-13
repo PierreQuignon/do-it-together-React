@@ -31,3 +31,14 @@
   border-radius: 8px;
   border-color: rgb(25, 0, 255);
 }
+
+.filters-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tags-categories-container {
+  display: flex;
+  align-items: center;
+  margin: 17px;
+}
