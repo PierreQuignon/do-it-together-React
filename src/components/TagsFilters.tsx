@@ -1,4 +1,5 @@
 import { FC, useState } from "react";
+import { Workshop } from "../pages/Workshops";
 import "../style/Filters.css";
 
 interface categoriesProps {

@@ -1,11 +1,30 @@
-import { FC, useState } from "react";
+import { FC } from "react";
+import { Workshop } from "../pages/Workshops";
 import "../style/CursorFilter.css";
 
-const CursorFilter: FC = () => {
-  const [value, setValue] = useState(15);
+interface filterProps {
+  setValue: React.Dispatch<React.SetStateAction<number>>;
+  value: number;
+  valueNumber: number;
+  workshops: Workshop[];
+  minPrice: number;
+  maxPrice: number;
+}
+
+const CursorFilter: FC<filterProps> = ({
+  setValue,
+  value,
+  valueNumber,
+  minPrice,
+  maxPrice,
+}) => {
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(Number(event.target.value));
+    valueNumber = parseInt(event.target.value);
+    setValue(valueNumber)
   };
+
+
   return (
     <div className="container-slider">
       <label
@@ -13,16 +32,16 @@ const CursorFilter: FC = () => {
         className="mb-2 inline-block text-neutral-700 dark:text-neutral-200"
       ></label>
       <div className="flex justify-between">
-        <span>0€</span>
+        <span>{minPrice}€</span>
         <div>{value}€/jour</div>
-        <span>30€</span>
+        <span>{maxPrice}€</span>
       </div>
       <input
         type="range"
         className="transparent h-1.5 w-full cursor-pointer appearance-none rounded-lg border-transparent bg-neutral-200"
         id="customRange1"
-        min="0"
-        max="30"
+        min={minPrice}
+        max={maxPrice}
         value={value}
         onChange={handleChange}
       />

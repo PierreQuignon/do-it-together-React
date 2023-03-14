@@ -21,33 +21,50 @@ export interface Workshop {
 
 const Workshops: FC = () => {
   const [workshops, setWorkshops] = useState<Workshop[]>([]);
-
   const [activeCategories, setActiveCategories] = useState<Array<string>>([]);
-  console.log('activeCategories', activeCategories);
-
 
   useEffect(() => {
     fetch("./src/dataset.json")
-      .then((res) => res.json())
-      .then((resJson) => {
-        setWorkshops(resJson.workshops);
-      });
+    .then((res) => res.json())
+    .then((resJson) => {
+      setWorkshops(resJson.workshops);
+    });
   }, []);
 
+  const priceRange = workshops.map((workshop) => workshop.price);
+  const pricesSorted = priceRange.sort((a, b) => a - b);
+  const minPrice = pricesSorted[0];
+  const maxPrice = pricesSorted[pricesSorted.length - 1];
+
+  const [value, setValue] = useState<number>(maxPrice);
+
+  const filteredWorkshops = workshops.filter(
+    (workshop) =>
+      value >= workshop.price &&
+      (!activeCategories.length || activeCategories.includes(workshop.category))
+  );
+
   return (
-    <div> 
+    <div>
       <div className="filters-container">
-      <TagsFilters setActiveCategories={setActiveCategories} activeCategories={activeCategories}/>
-      <CursorFilter />
+        <TagsFilters
+          setActiveCategories={setActiveCategories}
+          activeCategories={activeCategories}
+        />
+        <CursorFilter
+          value={value}
+          setValue={setValue}
+          valueNumber={Math.floor(Math.random() * 31)}
+          workshops={workshops}
+          minPrice={minPrice}
+          maxPrice={maxPrice}
+        />
       </div>
-      {workshops.map((workshop, index) => {
-        const { category } = workshop;
-        return !activeCategories.length || activeCategories.includes(category) ? (
-          <Link to={`/workshop/${workshop.id}`} key={`${workshop}-${index}`}>
-            <WorkshopCard workshop={workshop} />
-          </Link>
-        ) : null;
-      })}
+      {filteredWorkshops.map((workshop, index) => (
+        <Link to={`/workshop/${workshop.id}`} key={`${workshop}-${index}`}>
+          <WorkshopCard workshop={workshop} />
+        </Link>
+      ))}
     </div>
   );
 };
