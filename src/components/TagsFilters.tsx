@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { Workshop } from "../pages/Workshops";
+import "../style/App.css";
 import "../style/Filters.css";
 
 interface categoriesProps {
@@ -28,20 +28,20 @@ const TagsFilters: FC<categoriesProps> = ({
   return (
     <>
       <div className="tags-categories-container">
-        <button className={mecaToggled? 'toggled-class': 'tag-filter'} onClick={() => {addCategory("Mécanique"); setMecaToggled(prevState => !prevState)}}>
+        <button className={mecaToggled? 'toggled-class': 'btn-style-1'} onClick={() => {addCategory("Mécanique"); setMecaToggled(prevState => !prevState)}}>
           Mécanique
         </button>
-        <button className={menuiToggled? 'toggled-class': 'tag-filter'} onClick={() => {addCategory("Menuiserie"); setMenuiToggled(prevState => !prevState)}}>
+        <button className={menuiToggled? 'toggled-class': 'btn-style-1'} onClick={() => {addCategory("Menuiserie"); setMenuiToggled(prevState => !prevState)}}>
           Menuiserie
         </button>
-        <button className={geneToggled? 'toggled-class': 'tag-filter'} onClick={() => {addCategory("Général"); setGeneToggled(prevState => !prevState)}}>
+        <button className={geneToggled? 'toggled-class': 'btn-style-1'} onClick={() => {addCategory("Général"); setGeneToggled(prevState => !prevState)}}>
           Général
         </button>
-        <button className={sculToggled? 'toggled-class': 'tag-filter'} onClick={() => {addCategory("Sculpture"); setSculToggled(prevState => !prevState)}}>
+        <button className={sculToggled? 'toggled-class': 'btn-style-1'} onClick={() => {addCategory("Sculpture"); setSculToggled(prevState => !prevState)}}>
           Scupture
         </button>
         <button
-          className="reinitialized-btn"
+          className="btn-style-1"
           onClick={() => {setMecaToggled(false); setMenuiToggled(false); setGeneToggled(false); setSculToggled(false); setActiveCategories([])}}
         >
           Réinitialiser

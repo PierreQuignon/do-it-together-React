@@ -2,12 +2,19 @@
   border: solid;
   display: flex;
   justify-content: space-between;
-  border-width: 1px;
+  align-items: center;
+  border-width: 1.5px;
   padding:8px;
-  height: 90px;
+  height: 70px;
+  margin-bottom: 16px;
+  border-radius: 5px;
+  border-color:rgba(0, 0, 0, 0.311);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 0px 2px 1px;
+  margin-top: 10px;
 }
 
 .title-header {
   font-size: 20px;
   font-weight: 600;
+  margin-right: 20px;
 }

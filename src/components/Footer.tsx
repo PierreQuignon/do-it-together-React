@@ -1,6 +1,8 @@
+import "../style/App.css";
+
 function Footer (){
   return(
-    <div>Footer</div>
+    <button className="btn-style-1">Contact</button>
   )
 };
 export default Footer;

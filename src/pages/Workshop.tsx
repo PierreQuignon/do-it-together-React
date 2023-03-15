@@ -5,7 +5,6 @@ import { Workshop as workshopType } from "./Workshops";
 import ModalBooking from "../components/ModalBooking";
 import "../style/Modal.css";
 import "../style/App.css";
-import "../style/Workshop.css";
 
 function Workshop() {
   const [workshopTargeted, setWorkshopTargeted] = useState<workshopType[] | []>(
@@ -75,7 +74,7 @@ function Workshop() {
         })}
         <div>
           <button
-            className="btn-booking-workshop"
+            className="btn-style-1"
             onClick={() => {
               openModal()
             }}

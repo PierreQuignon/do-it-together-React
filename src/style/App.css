@@ -1,16 +1,40 @@
-.btn-style-1 {
-  border: solid;
-  border-width: 1px;
-  padding: 4px;
-  border-radius: 5px;
-  margin: 8px;
-}
 
 .body-container {
   padding: 10px;
+  border: solid;
+  border-width: 1.5px;
+  border-radius: 5px;
+  border-color:rgba(0, 0, 0, 0.311);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 0px 2px 1px;
 }
 
 .container-app {
   display: flex;
   flex-direction: column;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+.btn-style-1 {
+  border: solid;
+  border-width: 1px;
+  padding-top: 1px;
+  padding-bottom: 3px;
+  border-radius: 6px;
+  margin: 3px;
+  padding-right: 4px;
+  padding-left: 4px;
+}
+
+.btn-style-1:hover {
+  border: solid;
+  border-width: 1px;
+  padding-top: 1px;
+  padding-bottom: 3px;
+  border-radius: 6px;
+  margin: 3px;
+  padding-right: 4px;
+  padding-left: 4px;
+  color:rgba(4, 28, 241, 0.768);
+  border-color: rgba(4, 28, 241, 0.459)
 }

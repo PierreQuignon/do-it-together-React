@@ -16,7 +16,7 @@ const CursorFilter: FC<filterProps> = ({
   value,
   valueNumber,
   minPrice,
-  maxPrice,
+  maxPrice
 }) => {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

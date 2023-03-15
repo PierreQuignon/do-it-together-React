@@ -3,6 +3,7 @@ import WorkshopCard from "../components/WorkshopCard";
 import { Link } from "react-router-dom";
 import TagsFilters from "../components/TagsFilters";
 import CursorFilter from "../components/CursorFilter";
+import "../style/Workshops.css";
 
 export interface Workshop {
   id: number;
@@ -23,6 +24,7 @@ const Workshops: FC = () => {
   const [workshops, setWorkshops] = useState<Workshop[]>([]);
   const [activeCategories, setActiveCategories] = useState<Array<string>>([]);
 
+
   useEffect(() => {
     fetch("./src/dataset.json")
     .then((res) => res.json())
@@ -40,12 +42,13 @@ const Workshops: FC = () => {
 
   const filteredWorkshops = workshops.filter(
     (workshop) =>
-      value >= workshop.price &&
-      (!activeCategories.length || activeCategories.includes(workshop.category))
-  );
+    value >= workshop.price || value === undefined &&
+    (!activeCategories.length || activeCategories.includes(workshop.category))
+    );
+
 
   return (
-    <div>
+    <div className="workshops-container">
       <div className="filters-container">
         <TagsFilters
           setActiveCategories={setActiveCategories}
