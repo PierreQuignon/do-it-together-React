@@ -24,7 +24,6 @@ const CursorFilter: FC<filterProps> = ({
     setValue(valueNumber)
   };
 
-
   return (
     <div className="container-slider">
       <label

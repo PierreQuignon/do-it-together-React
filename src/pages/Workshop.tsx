@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Workshop as workshopType } from "./Workshops";
 import ModalBooking from "../components/ModalBooking";
+import CarouselPics from "../components/SlideShow"
 import "../style/Modal.css";
 import "../style/App.css";
 
@@ -43,6 +44,7 @@ function Workshop() {
         <Link className="btn-style-1" to="/workshops">
           Retour
         </Link>
+        <CarouselPics />
         {workshopTargeted.map((workshop, index) => {
           return (
             <ul key={index}>
