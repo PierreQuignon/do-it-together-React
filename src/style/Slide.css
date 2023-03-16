@@ -1,0 +1,9 @@
+.slide-container {
+  width: 400px;
+  height: 400px;
+  margin: 30px;
+}
+
+.img-slide {
+  border-radius: 10px;
+};

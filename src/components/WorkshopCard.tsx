@@ -9,7 +9,6 @@ interface IWorkshopProps {
 
 const WorkshopCard: FC<IWorkshopProps> = ({ workshop }) => {
   return (
-
     <ul className="container-workshop">
       <li>Titre: {workshop.title}</li>
       <li>Surface: {workshop.squareMeter}m2</li>
