@@ -84,7 +84,6 @@ function Workshop() {
                 </ul>
               );
             })}
-            <div>
               <button
                 className="btn-style-1"
                 onClick={() => {
@@ -97,7 +96,6 @@ function Workshop() {
                 workshopTargeted={workshopTargeted}
                 close={closeModal}
               />
-            </div>
           </div>
         </div>
       </div>

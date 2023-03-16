@@ -1,3 +1,16 @@
 .slide-workshop-details {
   display: flex;
-};
+  flex-direction: column;
+}
+
+.workshop-details {
+  height: 300px;
+}
+
+.workshop-container {
+  padding: 20px;
+}
+
+.workshop-title {
+  font-size: 30px;
+}
