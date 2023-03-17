@@ -3,8 +3,13 @@
   flex-direction: column;
 }
 
+.workshop-details-booking {
+  height: 350px;
+}
+
 .workshop-details {
-  height: 300px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .workshop-container {
