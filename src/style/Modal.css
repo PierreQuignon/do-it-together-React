@@ -53,3 +53,8 @@ text-align: center;
   border-color: #000000ba;
   box-shadow: 0 0 0 2px rgb(0 0 0 / 6%);
 }
+
+.nav.default-nav {
+  margin: 10px;
+}
+
