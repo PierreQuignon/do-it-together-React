@@ -24,7 +24,6 @@ const Workshops: FC = () => {
   const [workshops, setWorkshops] = useState<Workshop[]>([]);
   const [activeCategories, setActiveCategories] = useState<Array<string>>([]);
 
-
   useEffect(() => {
     fetch("./src/dataset.json")
     .then((res) => res.json())
@@ -38,14 +37,13 @@ const Workshops: FC = () => {
   const minPrice = pricesSorted[0];
   const maxPrice = pricesSorted[pricesSorted.length - 1];
 
-  const [value, setValue] = useState<number>(maxPrice);
+  const [value, setValue] = useState<number>(20);
 
   const filteredWorkshops = workshops.filter(
     (workshop) =>
-    value >= workshop.price || value === undefined &&
+    value >= workshop.price &&
     (!activeCategories.length || activeCategories.includes(workshop.category))
     );
-
 
   return (
     <div className="workshops-container">

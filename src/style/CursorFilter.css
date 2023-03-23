@@ -14,3 +14,21 @@
   font-size: 12px;
   white-space: nowrap;
 }
+
+input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: rgba(79, 79, 81, 0.703);
+  cursor: pointer;
+}
+
+input::-webkit-slider-thumb:hover {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(139, 0, 252, 0.471);
+  cursor: pointer;
+}

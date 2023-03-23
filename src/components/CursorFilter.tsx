@@ -30,10 +30,8 @@ const CursorFilter: FC<filterProps> = ({
         htmlFor="customRange1"
         className="mb-2 inline-block text-neutral-700 dark:text-neutral-200"
       ></label>
-      <div className="flex justify-between">
-        <span>{minPrice}€</span>
+      <div className="flex justify-center">
         <div>{value}€/jour</div>
-        <span>{maxPrice}€</span>
       </div>
       <input
         type="range"
