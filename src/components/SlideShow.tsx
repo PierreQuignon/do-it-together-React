@@ -9,6 +9,7 @@ import "react-slideshow-image/dist/styles.css";
 const proprietes = {
   autoplay: false,
   indicators: true,
+  transitionDuration: 500,
 };
 
 const SlideShow: FC = () => {
