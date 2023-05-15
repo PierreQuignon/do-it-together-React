@@ -2,28 +2,8 @@ import { FC } from "react";
 import "../style/About.css";
 
 const About: FC = () => {
-
-  const el = document.querySelector('.js-placeholders');
-  if (el) {
-    const images = el.querySelectorAll('.js-img-wrap');
-  };
-  const buttonOpen = document.querySelector('.js-slider-open');
-
   return (
-    <div className="about-container">
-      <button className="button-slider-open js-slider-open" type="button">
-        Ouvrir
-      </button>
-      <div className="placeholders js-placeholders">
-        <div
-          className="placeholders__img-wrap js-img-wrap"
-        >
-          <img
-            src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80&ar=0.8"
-            className="placeholders__img"
-          ></img>
-        </div>
-      </div>
+    <>
       <h1>
         "Partagez un moment de bricolage convivial tout en gagnant de l'argent"
       </h1>
@@ -65,7 +45,7 @@ const About: FC = () => {
         à un atelier équipé sans se ruiner, sans engagement et prêt de chez
         soit.
       </p>
-    </div>
+    </>
   );
 };
 
