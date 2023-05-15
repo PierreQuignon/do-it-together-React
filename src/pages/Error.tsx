@@ -1,7 +1,11 @@
-function Error() {
-  return(
-    <div>Error</div>
-  )
-}
+import { FC} from "react";
 
-export default Error
+const Error: FC = () => {
+  const array = [1, -2, -3, 2]
+
+  return (
+    <div>Il y a un problème dans l'URL </div>
+  )
+};
+
+export default Error;
