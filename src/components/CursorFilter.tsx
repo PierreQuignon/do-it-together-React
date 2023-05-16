@@ -5,8 +5,6 @@ import "../style/CursorFilter.css";
 interface filterProps {
   setValue: React.Dispatch<React.SetStateAction<number>>;
   value: number;
-  valueNumber: number;
-  workshops: Workshop[];
   minPrice: number;
   maxPrice: number;
 }
@@ -14,13 +12,12 @@ interface filterProps {
 const CursorFilter: FC<filterProps> = ({
   setValue,
   value,
-  valueNumber,
   minPrice,
   maxPrice
 }) => {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    valueNumber = parseInt(event.target.value);
+    const valueNumber = parseInt(event.target.value);
     setValue(valueNumber)
   };
 
@@ -39,7 +36,6 @@ const CursorFilter: FC<filterProps> = ({
         id="customRange1"
         min={minPrice}
         max={maxPrice}
-        value={value}
         onChange={handleChange}
       />
     </div>

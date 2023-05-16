@@ -37,9 +37,7 @@ const Workshops: FC = () => {
   const minPrice = pricesSorted[0];
   const maxPrice = pricesSorted[pricesSorted.length - 1];
 
-
   const [value, setValue] = useState<number>(20);
-
 
   const filteredWorkshops = workshops.filter(
     (workshop) =>
@@ -58,8 +56,6 @@ const Workshops: FC = () => {
         <CursorFilter
           value={value}
           setValue={setValue}
-          valueNumber={Math.floor(Math.random() * 31)}
-          workshops={workshops}
           minPrice={minPrice}
           maxPrice={maxPrice}
         />
