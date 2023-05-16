@@ -42,7 +42,7 @@ const ModalBooking: FC<WorkshopProps> = ({ workshopTargeted, closeModal }) => {
                 if (values) {
                   const start = values[0];
                   const end = values[1];
-                  const durationDays = moment.duration(end!.diff(start)).asDays();
+                  const durationDays = moment.duration(end!.diff(start)).asDays();//moment.duration utilise la bibliothèque moment.js pour calculer la durée en jours entre la date de début et la date de fin. La fonction diff() soustrait la date de début de la date de fin, et asDays() convertit le résultat en nombre de jours.
                   setDuration(durationDays);
                   setTotalPrice(workshopTargeted[0].price * duration);
                 } else {
