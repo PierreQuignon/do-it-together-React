@@ -5,21 +5,21 @@ import moment from "moment";
 import "../style/Modal.css";
 import "../style/App.css";
 
-interface IWorkshopProps {
+interface WorkshopProps {
   workshopTargeted: workshopType[] | [];
-  close: () => void;
+  closeModal: () => void;
 }
 
 const { RangePicker } = DatePicker;
 
-const ModalBooking: FC<IWorkshopProps> = ({ workshopTargeted, close }) => {
+const ModalBooking: FC<WorkshopProps> = ({ workshopTargeted, closeModal }) => {
   const [duration, setDuration] = useState<number>(0);
   const [totalPrice, setTotalPrice] = useState<number>(0);
 
   function bookingAlert() {
     if (duration > 0) {
-        close();
-        alert("Do It Together vous remercie de votre réservation 🎉😃");
+      closeModal();
+      alert("Do It Together vous remercie de votre réservation 🎉😃");
     }
   }
 
@@ -27,14 +27,14 @@ const ModalBooking: FC<IWorkshopProps> = ({ workshopTargeted, close }) => {
     <>
       <div className="overlay"></div>
       <div className="modal-container">
-        <button className="btn-close" onClick={close}>
+        <button className="btn-close" onClick={closeModal}>
           <i className="fa-regular fa-circle-xmark"></i>
         </button>
         <div className="content-modal-container">
-          {workshopTargeted.map((workshop, index) => {
-            return <p key={index}>Prix : {workshop.price}€/jour</p>;
-          })}
-          <div className="">
+          {workshopTargeted.map((workshop) => (
+            <p key={workshop.id}>Prix : {workshop.price}€/jour</p>
+          ))}
+          <div>
             <RangePicker
               placeholder={["Date de début", "Date de fin"]}
               format="DD-MM-YYYY"
@@ -42,8 +42,8 @@ const ModalBooking: FC<IWorkshopProps> = ({ workshopTargeted, close }) => {
                 if (values) {
                   const start = values[0];
                   const end = values[1];
-                  const duration = moment.duration(end!.diff(start)).asDays();
-                  setDuration(duration);
+                  const durationDays = moment.duration(end!.diff(start)).asDays();
+                  setDuration(durationDays);
                   setTotalPrice(workshopTargeted[0].price * duration);
                 } else {
                   setDuration(0);

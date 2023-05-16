@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Workshop as workshopType } from "./Workshops";
 import ModalBooking from "../components/ModalBooking";
 import "../style/Modal.css";
@@ -9,7 +9,7 @@ import SlideShow from "../components/SlideShow";
 import "../style/Slide.css";
 import "../style/Workshop.css";
 
-function Workshop() {
+const Workshop: FC = () => {
   const [workshopTargeted, setWorkshopTargeted] = useState<workshopType[] | []>(
     []
   );
@@ -56,10 +56,12 @@ function Workshop() {
           </div>
           <div className="workshop-details-booking">
             <div className="workshop-details">
-              {workshopTargeted.map((workshop, index) => {
-                return (
-                  <ul key={index}>
-                    <li className="workshop-title">{workshop.title}</li>
+              <ul>
+                {workshopTargeted.map((workshop) => (
+                  <>
+                    <li className="workshop-title" key={workshop.id}>
+                      {workshop.title}
+                    </li>
                     <li>Adresse: {workshop.location}</li>
                     <li>{workshop.content}</li>
                     <li>Surface: {workshop.squareMeter}m2</li>
@@ -82,9 +84,9 @@ function Workshop() {
                     <li>Prix: {workshop.price}€/jour</li>
                     <li>Loueur: {workshop.owner}</li>
                     <li>Contact: {workshop.phone}</li>
-                  </ul>
-                );
-              })}
+                  </>
+                ))}
+              </ul>
             </div>
             <button
               className="btn-style-1"
@@ -96,12 +98,12 @@ function Workshop() {
             </button>
             <ModalBooking
               workshopTargeted={workshopTargeted}
-              close={closeModal}
+              closeModal={closeModal}
             />
           </div>
         </div>
       </div>
     </>
   );
-}
+};
 export default Workshop;
