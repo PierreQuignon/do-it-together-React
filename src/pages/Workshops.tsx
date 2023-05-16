@@ -37,13 +37,16 @@ const Workshops: FC = () => {
   const minPrice = pricesSorted[0];
   const maxPrice = pricesSorted[pricesSorted.length - 1];
 
+
   const [value, setValue] = useState<number>(20);
+
 
   const filteredWorkshops = workshops.filter(
     (workshop) =>
     value >= workshop.price &&
     (!activeCategories.length || activeCategories.includes(workshop.category))
     );
+
 
   return (
     <div className="workshops-container">
@@ -61,8 +64,8 @@ const Workshops: FC = () => {
           maxPrice={maxPrice}
         />
       </div>
-      {filteredWorkshops.map((workshop, index) => (
-        <Link to={`/workshop/${workshop.id}`} key={`${workshop}-${index}`}>
+      {filteredWorkshops.map((workshop) => (
+        <Link to={`/workshop/${workshop.id}`} key={workshop.id}>
           <WorkshopCard workshop={workshop} />
         </Link>
       ))}
