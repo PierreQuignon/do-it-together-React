@@ -11,13 +11,15 @@ const TagsFilters: FC<categoriesProps> = ({
   setActiveCategories,
   activeCategories,
 }) => {
-  function addCategory(categ: string) {
-    if (activeCategories.includes(categ)) {
-      setActiveCategories(activeCategories.filter((cat) => cat !== categ));
+
+  function addCategory(categTargeted: string) {
+    if (activeCategories.includes(categTargeted)) { //activeCategories est un tableau de string(categories) vide au montage du composant malgré que toutes les catégories de workshops s'affiches
+      setActiveCategories(activeCategories.filter((cat) => cat !== categTargeted));
     } else {
-      setActiveCategories([...activeCategories, categ]);
+      setActiveCategories([...activeCategories, categTargeted]);
     }
   }
+
 
   const [mecaToggled, setMecaToggled] = useState<boolean>(false);
   const [menuiToggled, setMenuiToggled] = useState<boolean>(false);
