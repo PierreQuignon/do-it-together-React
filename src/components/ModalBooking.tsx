@@ -13,11 +13,10 @@ interface WorkshopProps {
 const { RangePicker } = DatePicker;
 
 const ModalBooking: FC<WorkshopProps> = ({ workshopTargeted, closeModal }) => {
-  const [duration, setDuration] = useState<number>(0);
   const [totalPrice, setTotalPrice] = useState<number>(0);
 
   function bookingAlert() {
-    if (duration > 0) {
+    if (totalPrice > 0) {
       closeModal();
       alert("Do It Together vous remercie de votre réservation 🎉😃");
     }
@@ -40,13 +39,14 @@ const ModalBooking: FC<WorkshopProps> = ({ workshopTargeted, closeModal }) => {
               format="DD-MM-YYYY"
               onChange={(values) => {
                 if (values) {
+                  console.log("values", values);
                   const start = values[0];
                   const end = values[1];
-                  const durationDays = moment.duration(end!.diff(start)).asDays();//moment.duration utilise la bibliothèque moment.js pour calculer la durée en jours entre la date de début et la date de fin. La fonction diff() soustrait la date de début de la date de fin, et asDays() convertit le résultat en nombre de jours.
-                  setDuration(durationDays);
-                  setTotalPrice(workshopTargeted[0].price * duration);
+                  const durationDays = moment
+                    .duration(end!.diff(start))
+                    .asDays(); //moment.duration utilise la bibliothèque moment.js pour calculer la durée en jours entre la date de début et la date de fin. La fonction diff() soustrait la date de début de la date de fin, et asDays() convertit le résultat en nombre de jours.
+                  setTotalPrice(workshopTargeted[0].price * durationDays); //Le [0] permets de dire à TS que workshopTargeted est bien "workshopType[] | []"
                 } else {
-                  setDuration(0);
                   setTotalPrice(0);
                 }
               }}

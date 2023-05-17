@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react";
-import WorkshopCard from "../components/WorkshopCard";
 import { Link } from "react-router-dom";
+import WorkshopCard from "../components/WorkshopCard";
 import TagsFilters from "../components/TagsFilters";
 import CursorFilter from "../components/CursorFilter";
 import "../style/Workshops.css";
