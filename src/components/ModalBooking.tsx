@@ -39,7 +39,6 @@ const ModalBooking: FC<WorkshopProps> = ({ workshopTargeted, closeModal }) => {
               format="DD-MM-YYYY"
               onChange={(values) => {
                 if (values) {
-                  console.log("values", values);
                   const start = values[0];
                   const end = values[1];
                   const durationDays = moment
