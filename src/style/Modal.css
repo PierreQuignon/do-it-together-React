@@ -17,7 +17,7 @@
 }
 
 .modal-show {
-  transform: translate(-50%, -300%);
+  transform: translate(-50%, -150%);
 }
 
 .content-modal-container {
@@ -34,7 +34,7 @@ text-align: center;
   position:absolute;
   top:3px;
   left:12px;
-  color:red;
+  color:rgb(139, 0, 252);
   transition:0.3s;
 }
 

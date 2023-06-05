@@ -5,8 +5,48 @@
 
 .workshop-title {
   font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .workshop-comment {
   margin-left: 20px;
+  margin-right: 20px;
+}
+
+.images-worshop-container {
+  display: flex;
+  margin-top: 20px;
+}
+
+.workshop-image1 {
+  width: 680px;
+  height: 400px;
+  margin-right: 10px;
+  border-radius: 15px 0 0 15px;
+}
+
+.workshop-image2 {
+  width: 300px;
+  height: 195px;
+  margin-bottom: 10px;
+  border-radius: 0 15px 0 0;
+}
+
+.workshop-image3 {
+  width: 300px;
+  height: 195px;
+  border-radius: 0 0 15px 0;
+}
+
+.details-workshop-text {
+  margin-top: 30px;
+}
+
+.workshop-content {
+  width: 995px;
+  margin-bottom: 15px;
+  padding-bottom: 30px;
+  border-bottom: solid;
+  border-color: rgba(0, 0, 0, 0.121);
 }
