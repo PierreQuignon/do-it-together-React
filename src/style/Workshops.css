@@ -1,3 +1,22 @@
-.workshops-container {
+.workshops-page {
   min-height: 510px;
+}
+
+.workshops-container {
+  display: grid;
+  justify-content: space-around;
+  flex-grow: 1;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.slideshow-and-content {
+  border-radius: 10px;
+  padding-top: 25px;
+}
+
+.slideshow-and-content:hover{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+  padding-top: 25px;
 }

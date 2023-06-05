@@ -4,6 +4,9 @@ import WorkshopCard from "../components/WorkshopCard";
 import TagsFilters from "../components/TagsFilters";
 import CursorFilter from "../components/CursorFilter";
 import "../style/Workshops.css";
+import "../style/Filters.css";
+import SlideShow from "../components/SlideShow";
+import "../style/Slide.css";
 
 export interface Workshop {
   id: number;
@@ -18,6 +21,7 @@ export interface Workshop {
   price: number;
   rating: number;
   category: string;
+  image: string;
 }
 
 const Workshops: FC = () => {
@@ -26,10 +30,10 @@ const Workshops: FC = () => {
 
   useEffect(() => {
     fetch("./src/dataset.json")
-    .then((res) => res.json())
-    .then((resJson) => {
-      setWorkshops(resJson.workshops);
-    });
+      .then((res) => res.json())
+      .then((resJson) => {
+        setWorkshops(resJson.workshops);
+      });
   }, []);
 
   const priceRange = workshops.map((workshop) => workshop.price);
@@ -41,13 +45,12 @@ const Workshops: FC = () => {
 
   const filteredWorkshops = workshops.filter(
     (workshop) =>
-    value >= workshop.price &&
-    (!activeCategories.length || activeCategories.includes(workshop.category))
-    );
-
+      value >= workshop.price &&
+      (!activeCategories.length || activeCategories.includes(workshop.category))
+  );
 
   return (
-    <div className="workshops-container">
+    <div className="workshops-page">
       <div className="filters-container">
         <TagsFilters
           setActiveCategories={setActiveCategories}
@@ -60,11 +63,16 @@ const Workshops: FC = () => {
           maxPrice={maxPrice}
         />
       </div>
-      {filteredWorkshops.map((workshop) => (
-        <Link to={`/workshop/${workshop.id}`} key={workshop.id}>
-          <WorkshopCard workshop={workshop} />
-        </Link>
-      ))}
+      <div className="workshops-container">
+        {filteredWorkshops.map((workshop) => (
+          <div key={workshop.id} className="slideshow-and-content">
+            <SlideShow />
+            <Link to={`/workshop/${workshop.id}`}>
+              <WorkshopCard workshop={workshop} />
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

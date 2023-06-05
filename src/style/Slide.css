@@ -1,10 +1,31 @@
 .slide-container {
-  width: 600px;
-  height: 450px;
+  position: relative;
+  width: 300px;
+  height: 230px;
   margin: auto;
-  margin-top: 50px;
+  margin-bottom: 10px;
 }
 
 .img-slide {
   border-radius: 10px;
-};
+  width: 300px;
+  height: 230px;
+}
+
+.indicators {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.each-slideshow-indicator::before {
+  background-color: rgb(139, 0, 252)!important;
+}
+
+.react-slideshow-container .default-nav{
+  background: none !important;
+  height: 18px !important;
+  width: 18px !important;
+}

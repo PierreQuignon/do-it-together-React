@@ -1,10 +1,4 @@
-.container-workshop {
-  border: solid;
-  border-width: 1.5px;
-  border-color:rgba(0, 0, 0, 0.311);
-  margin: 10px;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 0px 2px 1px;
+.container-workshop-card {
+  padding-left: 30px;
+  margin-bottom: 20px;
 }
