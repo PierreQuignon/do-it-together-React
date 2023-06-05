@@ -10,8 +10,9 @@
     "location":"6 Boulevard du Général Gaule, 4440 Rezé",
     "phone":"0688469875",
     "price": 17,
-    "rating": 4,
-    "category":"Menuiserie"
+    "rating": 3,
+    "category":"Menuiserie",
+    "comment":23
     },
 
     { "id": 2,
@@ -25,7 +26,8 @@
     "phone":"0766552398",
     "price": 20,
     "rating": 5,
-    "category":"Mécanique"
+    "category":"Mécanique",
+    "comment":81
     },
 
     { "id": 3,
@@ -39,7 +41,8 @@
     "phone":"0642567496",
     "price": 13,
     "rating": 4,
-    "category":"Sculpture"
+    "category":"Sculpture",
+    "comment":68
     },
 
     { "id": 4,
@@ -52,8 +55,9 @@
     "location":"3 rue André Maurois, 4470 Carquefou",
     "phone":"0785326574",
     "price": 10,
-    "rating": 5,
-    "category":"Général"
+    "rating": 2,
+    "category":"Général",
+    "comment":14
     }
   ]
 }

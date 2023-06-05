@@ -2,3 +2,24 @@
   padding-left: 30px;
   margin-bottom: 20px;
 }
+
+.rating-container {
+  display:flex;
+  margin-right: 28px;
+  align-items: center;
+}
+
+.first-lign-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa-regular.fa-star {
+  margin-right: 2px;
+  color: rgb(139, 0, 252);
+}
+
+.price-container {
+  display: flex;
+  align-items: center; 
+}

@@ -21,7 +21,7 @@ export interface Workshop {
   price: number;
   rating: number;
   category: string;
-  image: string;
+  comment: number;
 }
 
 const Workshops: FC = () => {

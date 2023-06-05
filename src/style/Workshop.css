@@ -1,16 +1,3 @@
-.slide-workshop-details {
-  display: flex;
-  flex-direction: column;
-}
-
-.workshop-details-booking {
-  height: 350px;
-}
-
-.workshop-details {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
 
 .workshop-container {
   padding: 20px;
@@ -18,4 +5,8 @@
 
 .workshop-title {
   font-size: 30px;
+}
+
+.workshop-comment {
+  margin-left: 20px;
 }

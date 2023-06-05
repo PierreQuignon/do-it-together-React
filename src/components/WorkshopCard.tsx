@@ -8,22 +8,23 @@ interface WorkshopProps {
 
 const WorkshopCard: FC<WorkshopProps> = ({ workshop }) => {
   return (
-      <ul className="container-workshop-card">
-        <li>Titre: {workshop.title}</li>
-        <li>Prix: {workshop.price}€</li>
-        <li>Localisation: {workshop.location}</li>
+    <ul className="container-workshop-card">
+      <div className="first-lign-card">
         <li>
-          Note:{" "}
-          {[...Array(workshop.rating)].map(
-            (
-              _,
-              i // Si workshop.map égale 2, le tableau sera le suivant [undifined, undefined]. "_" est fait pour ignorer la valeur "undefined" car elle n'est pas utilisée
-            ) => (
-              <i key={i} className="fa-regular fa-star"></i>
-            )
-          )}
+          <b>{workshop.title}</b>
         </li>
-      </ul>
+        <div className="rating-container">
+          <i className="fa-regular fa-star"></i>
+          <li>{workshop.rating}</li>
+        </div>
+      </div>
+      <li>{workshop.location}</li>
+      <div className="price-container">
+        <li>
+          <b>{workshop.price}</b>€ par jour
+        </li>
+      </div>
+    </ul>
   );
 };
 export default WorkshopCard;
