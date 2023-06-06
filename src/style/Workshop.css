@@ -42,16 +42,13 @@
   border-radius: 0 0 15px 0;
 }
 
-.details-workshop-text {
-  margin-top: 30px;
-}
-
 .workshop-content {
   width: 995px;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   padding-bottom: 30px;
   border-bottom: solid;
   border-color: rgba(0, 0, 0, 0.121);
+  margin-top: 25px;
 }
 
 .container-share-icon {
@@ -90,4 +87,74 @@ margin: 4px
 .rating-comments-location {
   display: flex;
   align-items: center;
+}
+
+.btn-booking-workshop-page {
+  background-color: initial;
+  background-image: linear-gradient(#8614f8 0, #760be0 100%);
+  border-radius: 15px;
+  border-style: none;
+  box-shadow: rgba(245, 244, 247, .25) 0 1px 1px inset;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter, sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  height: 56px;
+  line-height: 60px;
+  margin-left: -4px;
+  outline: 0;
+  text-align: center;
+  transition: all .3s cubic-bezier(.05, .03, .35, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: bottom;
+  width: 400px;
+}
+
+.btn-booking-workshop-page:hover {
+  opacity: .8;
+}
+
+@media screen and (max-width: 1000px) {
+  .btn-booking-workshop-page {
+    font-size: 14px;
+    height: 55px;
+    line-height: 55px;
+    width: 150px;
+  }
+}
+
+.container-button-booking-workshop-page {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-booking-and-info-renter {
+  display: flex;
+  justify-content: space-between;
+  width: 995px;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: solid;
+  border-color: rgba(0, 0, 0, 0.121);
+}
+
+.profil-phone-icon-container {
+  display:flex;
+  align-items: center;
+}
+
+.profil-phone-icon {
+  margin-right: 10px;
+  font-size: 20px;
+  color: rgb(139, 0, 252)
+}
+
+.info-delete-booking {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

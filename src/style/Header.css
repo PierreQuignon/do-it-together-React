@@ -16,5 +16,18 @@
 .title-header {
   font-size: 20px;
   font-weight: 600;
+  margin-right: 3px;
+  color: rgb(139, 0, 252);
+  font-family: 'Lobster', cursive;
+}
+
+.container-logo-dit {
+  display: flex;
+  align-items: center;
   margin-right: 20px;
+}
+
+.logo-dit {
+  color: rgb(139, 0, 252);
+  font-size: 25px;
 }

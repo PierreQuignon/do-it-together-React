@@ -13,6 +13,9 @@ import menuiserie3 from "../assets/menuiserie/menuiserie3.jpeg";
 import { BsShareFill } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiTwotoneHeart } from "react-icons/ai";
+import { CgProfile } from "react-icons/cg";
+import { BsTelephoneFill } from "react-icons/bs";
+
 
 const Workshop: FC = () => {
   const [workshopTargeted, setWorkshopTargeted] = useState<workshopType[] | []>(
@@ -53,13 +56,15 @@ const Workshop: FC = () => {
 
   function messageAddedFavory() {
     if (heartToggled) {
-      alert("Une notifiction vient d'être envoyée au propriétaire de l'annonce")
+      alert(
+        "Une notifiction vient d'être envoyée au propriétaire de l'annonce"
+      );
     }
   }
 
-  useEffect(()=>{
-    messageAddedFavory()
-  }, [heartToggled])
+  useEffect(() => {
+    messageAddedFavory();
+  }, [heartToggled]);
 
   return (
     <>
@@ -119,42 +124,52 @@ const Workshop: FC = () => {
                   />
                 </div>
               </div>
-              <div className="details-workshop-text">
-                <li className="workshop-content">{workshop.content}</li>
-                <li>{workshop.squareMeter}m2</li>
-                <li>
-                  Electricité{" "}
-                  {workshop.electricity ? (
-                    <i className="fa-regular fa-square-check"></i>
-                  ) : (
-                    <i className="fa-sharp fa-regular fa-square"></i>
-                  )}
-                </li>
-                <li>
-                  Point d'eau{" "}
-                  {workshop.water ? (
-                    <i className="fa-regular fa-square-check"></i>
-                  ) : (
-                    <i className="fa-sharp fa-regular fa-square"></i>
-                  )}
-                </li>
-                <li>
-                  <b>{workshop.price}</b>€ par jour
-                </li>
-                <li>Loueur: {workshop.owner}</li>
-                <li>Contact: {workshop.phone}</li>
+
+              <li className="workshop-content">{workshop.content}</li>
+              <div className="btn-booking-and-info-renter">
+                <div className="renter-info-container">
+                  <div className="profil-phone-icon-container">
+                    <CgProfile className="profil-phone-icon"/>
+                    <div>{workshop.owner}</div>
+                  </div>
+                  <div className="profil-phone-icon-container">
+                    <BsTelephoneFill className="profil-phone-icon"/>
+                    <div>{workshop.phone}</div>
+                  </div>
+                </div>
+                <u className="info-delete-booking">Annulation gratuite 48h avant la date de location</u>
+                <div className="container-button-booking-workshop-page">
+                  <button
+                    className="btn-booking-workshop-page"
+                    onClick={() => {
+                      openModal();
+                    }}
+                  >
+                    Je réserve dès maintenant à <b>{workshop.price} €</b> par
+                    jour
+                  </button>
+                </div>
               </div>
+              <li>{workshop.squareMeter}m2</li>
+              <li>
+                Electricité{" "}
+                {workshop.electricity ? (
+                  <i className="fa-regular fa-square-check"></i>
+                ) : (
+                  <i className="fa-sharp fa-regular fa-square"></i>
+                )}
+              </li>
+              <li>
+                Point d'eau{" "}
+                {workshop.water ? (
+                  <i className="fa-regular fa-square-check"></i>
+                ) : (
+                  <i className="fa-sharp fa-regular fa-square"></i>
+                )}
+              </li>
             </>
           ))}
         </ul>
-        <button
-          className="btn-style-1"
-          onClick={() => {
-            openModal();
-          }}
-        >
-          Réserver
-        </button>
       </div>
       <ModalBooking
         workshopTargeted={workshopTargeted}
