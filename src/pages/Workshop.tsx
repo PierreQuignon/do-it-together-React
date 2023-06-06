@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { FC, useEffect, useState } from "react";
 import { Workshop as workshopType } from "./Workshops";
 import ModalBooking from "../components/ModalBooking";
+import OptionsWorkshop from "../components/OptionsWorkshop";
 import "../style/Modal.css";
 import "../style/App.css";
 import "../style/Slide.css";
@@ -15,7 +16,6 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { AiTwotoneHeart } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
 import { BsTelephoneFill } from "react-icons/bs";
-
 
 const Workshop: FC = () => {
   const [workshopTargeted, setWorkshopTargeted] = useState<workshopType[] | []>(
@@ -129,15 +129,17 @@ const Workshop: FC = () => {
               <div className="btn-booking-and-info-renter">
                 <div className="renter-info-container">
                   <div className="profil-phone-icon-container">
-                    <CgProfile className="profil-phone-icon"/>
+                    <CgProfile className="profil-phone-icon" />
                     <div>{workshop.owner}</div>
                   </div>
                   <div className="profil-phone-icon-container">
-                    <BsTelephoneFill className="profil-phone-icon"/>
+                    <BsTelephoneFill className="profil-phone-icon" />
                     <div>{workshop.phone}</div>
                   </div>
                 </div>
-                <u className="info-delete-booking">Annulation gratuite 48h avant la date de location</u>
+                <u className="info-delete-booking">
+                  Annulation gratuite 48h avant la date de la location
+                </u>
                 <div className="container-button-booking-workshop-page">
                   <button
                     className="btn-booking-workshop-page"
@@ -150,23 +152,7 @@ const Workshop: FC = () => {
                   </button>
                 </div>
               </div>
-              <li>{workshop.squareMeter}m2</li>
-              <li>
-                Electricité{" "}
-                {workshop.electricity ? (
-                  <i className="fa-regular fa-square-check"></i>
-                ) : (
-                  <i className="fa-sharp fa-regular fa-square"></i>
-                )}
-              </li>
-              <li>
-                Point d'eau{" "}
-                {workshop.water ? (
-                  <i className="fa-regular fa-square-check"></i>
-                ) : (
-                  <i className="fa-sharp fa-regular fa-square"></i>
-                )}
-              </li>
+              <OptionsWorkshop workshopTargeted={workshopTargeted}/>
             </>
           ))}
         </ul>
