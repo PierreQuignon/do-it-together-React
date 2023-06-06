@@ -10,6 +10,9 @@ import "../style/Workshop.css";
 import menuiserie1 from "../assets/menuiserie/menuiserie1.jpg";
 import menuiserie2 from "../assets/menuiserie/menuiserie2.jpg";
 import menuiserie3 from "../assets/menuiserie/menuiserie3.jpeg";
+import { BsShareFill } from "react-icons/bs";
+import { AiOutlineHeart } from "react-icons/ai";
+import { AiTwotoneHeart } from "react-icons/ai";
 
 const Workshop: FC = () => {
   const [workshopTargeted, setWorkshopTargeted] = useState<workshopType[] | []>(
@@ -46,6 +49,18 @@ const Workshop: FC = () => {
     modalContainer.classList.remove("modal-show");
   }
 
+  const [heartToggled, setHeartToggled] = useState<boolean>(false);
+
+  function messageAddedFavory() {
+    if (heartToggled) {
+      alert("Une notifiction vient d'être envoyée au propriétaire de l'annonce")
+    }
+  }
+
+  useEffect(()=>{
+    messageAddedFavory()
+  }, [heartToggled])
+
   return (
     <>
       <div className="workshop-container">
@@ -55,18 +70,35 @@ const Workshop: FC = () => {
         <ul>
           {workshopTargeted.map((workshop) => (
             <>
-              <li className="workshop-title" key={workshop.id}>
+              <div className="workshop-title" key={workshop.id}>
                 {workshop.title}
-              </li>
-              <div className="rating-container">
-                <i className="fa-regular fa-star"></i>
-                <li>{workshop.rating}</li>
-                <li className="workshop-comment">
-                  ( {workshop.comment} commentaires )
-                </li>
-                <li>
+              </div>
+              <div className="rating-comments-share-upload-location">
+                <div className="rating-comments-location">
+                  <i className="fa-regular fa-star"></i>
+                  <div>{workshop.rating}</div>
+                  <div className="workshop-comment">
+                    ( {workshop.comment} commentaires )
+                  </div>
                   <u>{workshop.location}</u>
-                </li>
+                </div>
+                <div className="container-shareicon-hearticon">
+                  <div className="container-share-icon">
+                    <BsShareFill className="share-icon" />
+                    <u>Partager</u>
+                  </div>
+                  <button
+                    className="button-fav-heart"
+                    onClick={() => setHeartToggled((prevState) => !prevState)}
+                  >
+                    {heartToggled ? (
+                      <AiTwotoneHeart className="heart-icon" />
+                    ) : (
+                      <AiOutlineHeart className="heart-icon" />
+                    )}
+                    <u>Enregister</u>
+                  </button>
+                </div>
               </div>
               <div className="images-worshop-container">
                 <img

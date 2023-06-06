@@ -1721,6 +1721,11 @@
     "loose-envify" "^1.1.0"
     "scheduler" "^0.23.0"
 
+"react-icons@^4.9.0":
+  "integrity" "sha512-ijUnFr//ycebOqujtqtV9PFS7JjhWg0QU6ykURVHuL4cbofvRCf3f6GMn9+fBktEFQOIVZnuAYLZdiyadRQRFg=="
+  "resolved" "https://registry.npmjs.org/react-icons/-/react-icons-4.9.0.tgz"
+  "version" "4.9.0"
+
 "react-input-slider@^6.0.1":
   "integrity" "sha512-WASm/k0rVw3cXzvfkoUa4wMnF74SbifeuwSmjPC+zanhV4W9KAmPM+H6yXhIZAjJL4TU+sUw/pgyUyAt/txvIw=="
   "resolved" "https://registry.npmjs.org/react-input-slider/-/react-input-slider-6.0.1.tgz"

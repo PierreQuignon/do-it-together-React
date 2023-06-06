@@ -12,7 +12,14 @@
     "price": 17,
     "rating": 3,
     "category":"Menuiserie",
-    "comment":23
+    "comment":23,
+    "light": true,
+    "maintools":true,
+    "pressurizedair": true,
+    "animals": true,
+    "parking": true,
+    "wifi": false,
+    "soundproof":true
     },
 
     { "id": 2,
@@ -27,7 +34,14 @@
     "price": 20,
     "rating": 5,
     "category":"Mécanique",
-    "comment":81
+    "comment":81,
+    "light": true,
+    "maintools":true,
+    "pressurizedair": true,
+    "animals": true,
+    "parking": true,
+    "wifi": true,
+    "soundproof":true
     },
 
     { "id": 3,
@@ -42,7 +56,14 @@
     "price": 13,
     "rating": 4,
     "category":"Sculpture",
-    "comment":68
+    "comment":68,
+    "light": true,
+    "maintools":true,
+    "pressurizedair": false,
+    "animals": true,
+    "parking": true,
+    "wifi": true,
+    "soundproof":false
     },
 
     { "id": 4,
@@ -57,7 +78,14 @@
     "price": 10,
     "rating": 2,
     "category":"Général",
-    "comment":14
+    "comment":14,
+    "light": true,
+    "maintools":true,
+    "pressurizedair": false,
+    "animals": false,
+    "parking": true,
+    "wifi": true,
+    "soundproof":false
     }
   ]
 }

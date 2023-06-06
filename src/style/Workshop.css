@@ -1,6 +1,9 @@
 
 .workshop-container {
-  padding: 20px;
+  margin-top: 60px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 990px;
 }
 
 .workshop-title {
@@ -49,4 +52,42 @@
   padding-bottom: 30px;
   border-bottom: solid;
   border-color: rgba(0, 0, 0, 0.121);
+}
+
+.container-share-icon {
+  display: flex;
+  align-items: center;
+}
+
+.button-fav-heart {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.heart-icon {
+  color: rgb(139, 0, 252);
+  font-size: 20px;
+  margin: 2px
+}
+
+.share-icon {
+color: rgb(139, 0, 252);
+font-size: 20px;
+margin: 4px
+}
+
+.container-shareicon-hearticon {
+  display: flex;
+  align-items: center;
+}
+
+.rating-comments-share-upload-location {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rating-comments-location {
+  display: flex;
+  align-items: center;
 }

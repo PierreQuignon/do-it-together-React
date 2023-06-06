@@ -22,6 +22,13 @@ export interface Workshop {
   rating: number;
   category: string;
   comment: number;
+  light: boolean;
+  maintools: boolean;
+  pressurizedair: boolean;
+  animals: boolean;
+  parking: boolean;
+  wifi: boolean;
+  soundproof: boolean;
 }
 
 const Workshops: FC = () => {
