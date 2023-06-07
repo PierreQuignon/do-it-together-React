@@ -4,7 +4,7 @@ import WorkshopCard from "../components/WorkshopCard";
 import TagsFilters from "../components/TagsFilters";
 import CursorFilter from "../components/CursorFilter";
 import "../style/Workshops.css";
-import "../style/Filters.css";
+import "../style/TagsFilters.css";
 import SlideShow from "../components/SlideShow";
 import "../style/Slide.css";
 

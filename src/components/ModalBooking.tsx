@@ -5,7 +5,6 @@ import moment from "moment";
 import "../style/Modal.css";
 import "../style/App.css";
 
-
 interface WorkshopProps {
   workshopTargeted: workshopType[] | [];
   closeModal: () => void;

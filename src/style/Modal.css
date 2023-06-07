@@ -10,7 +10,6 @@
   background-color: white;
   position: relative;
   padding:8px;
-  line-height: 35px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
   transition: 0.6s all ease-in-out;;
   transform: translate(-50%, -100vw);

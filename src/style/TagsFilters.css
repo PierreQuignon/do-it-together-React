@@ -1,0 +1,34 @@
+.toggled-class {
+  background-color: initial;
+  background-image: linear-gradient(#2b0154 0, #760be0 100%);
+  border-radius: 10px;
+  border-style: none;
+  box-shadow: rgba(245, 244, 247, .25) 0 1px 1px inset;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter, sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 7px;
+  outline: 0;
+  text-align: center;
+  transition: all .3s cubic-bezier(.05, .03, .35, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: bottom;
+  margin: 3px;
+}
+
+.filters-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.tags-categories-container {
+  display: flex;
+  align-items: center;
+  margin: 17px;
+}

@@ -1,0 +1,24 @@
+.images-worshop-container {
+  display: flex;
+  margin-top: 20px;
+}
+
+.workshop-image1 {
+  width: 680px !important;
+  height: 405px !important;
+  margin-right: 10px;
+  border-radius: 15px 0 0 15px;
+}
+
+.workshop-image2 {
+  width: 300px !important;
+  height: 195px !important;
+  margin-bottom: 10px;
+  border-radius: 0 15px 0 0;
+}
+
+.workshop-image3 {
+  width: 300px !important;
+  height: 195px !important;
+  border-radius: 0 0 15px 0;
+}

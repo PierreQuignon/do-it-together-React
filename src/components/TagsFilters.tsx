@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import "../style/App.css";
-import "../style/Filters.css";
+import "../style/TagsFilters.css";
 
 interface categoriesProps {
   setActiveCategories: React.Dispatch<React.SetStateAction<string[]>>;
