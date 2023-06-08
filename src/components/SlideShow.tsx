@@ -2,6 +2,9 @@ import { FC } from "react";
 import { Slide } from "react-slideshow-image";
 import "../style/Slide.css";
 import "react-slideshow-image/dist/styles.css";
+import { Cloudinary } from "@cloudinary/url-gen";
+import { AdvancedImage } from "@cloudinary/react";
+import { fill } from "@cloudinary/url-gen/actions/resize";
 
 const proprietes = {
   autoplay: false,
@@ -10,22 +13,37 @@ const proprietes = {
 };
 
 const SlideShow: FC = () => {
+
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName: "dhc7v7ktf",
+    },
+  });
+
+  const menuiserie1 = cld.image("dit/menuiserie");
+  const menuiserie2 = cld.image("dit/menuiserie-2");
+  const menuiserie3 = cld.image("dit/menuiserie-3");
+
+  menuiserie1.resize(fill().width(750).height(450));
+  menuiserie2.resize(fill().width(750).height(450));
+  menuiserie3.resize(fill().width(750).height(450));
+
   return (
     <div className="slide-container">
       <Slide {...proprietes}>
         <div className="each-slide">
           <div>
-            {/* <img src={menuiserie1} alt="image1" className="img-slide" /> */}
+            <AdvancedImage cldImg={menuiserie1} className="img-slide" />
           </div>
         </div>
         <div className="each-slide">
           <div>
-            {/* <img src={menuiserie2} alt="image2" className="img-slide" /> */}
+            <AdvancedImage cldImg={menuiserie2} className="img-slide" />
           </div>
         </div>
         <div className="each-slide">
           <div>
-            {/* <img src={menuiserie3} alt="image3" className="img-slide" /> */}
+            <AdvancedImage cldImg={menuiserie3} className="img-slide" />
           </div>
         </div>
       </Slide>
