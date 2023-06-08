@@ -1,8 +1,9 @@
 import { FC, useState } from "react";
-import "../style/Gallery.css";
 import { Cloudinary } from "@cloudinary/url-gen";
 import { AdvancedImage } from "@cloudinary/react";
 import { fill } from "@cloudinary/url-gen/actions/resize";
+import { HiArrowsExpand } from "react-icons/hi";
+import "../style/Gallery.css";
 
 const Gallery: FC = () => {
   const cld = new Cloudinary({
@@ -33,16 +34,17 @@ const Gallery: FC = () => {
     setPicture3(picture1);
   }
 
-
   return (
     <div className="images-worshop-container">
-      <AdvancedImage cldImg={picture1} className="workshop-image1" />
+      <AdvancedImage cldImg={picture1} className="workshop-image1"/>
       <div>
         <button onClick={switchPicture2}>
-          <AdvancedImage cldImg={picture2} className="workshop-image2" />
+          <AdvancedImage cldImg={picture2} className="workshop-image2"/>
+          <HiArrowsExpand className="arrow-icon-image2"/>
         </button>
         <button onClick={switchPicture3}>
-          <AdvancedImage cldImg={picture3} className="workshop-image3" />
+          <AdvancedImage cldImg={picture3} className="workshop-image3"/>
+          <HiArrowsExpand className="arrow-icon-image3"/>
         </button>
       </div>
     </div>

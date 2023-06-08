@@ -20,12 +20,10 @@ const TagsFilters: FC<categoriesProps> = ({
     }
   }
 
-
   const [mecaToggled, setMecaToggled] = useState<boolean>(false);
   const [menuiToggled, setMenuiToggled] = useState<boolean>(false);
   const [geneToggled, setGeneToggled] = useState<boolean>(false);
   const [sculToggled, setSculToggled] = useState<boolean>(false)
-
 
   return (
     <>
@@ -43,7 +41,7 @@ const TagsFilters: FC<categoriesProps> = ({
           Scupture
         </button>
         <button
-          className="btn-style-1"
+          className="btn-tags-filters"
           onClick={() => {setMecaToggled(false); setMenuiToggled(false); setGeneToggled(false); setSculToggled(false); setActiveCategories([])}}
         >
           Réinitialiser

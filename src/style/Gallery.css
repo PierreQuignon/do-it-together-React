@@ -22,3 +22,19 @@
   height: 195px !important;
   border-radius: 0 0 15px 0;
 }
+
+.arrow-icon-image2 {
+  right: 285px;
+  color: rgb(139, 0, 252);
+  font-size: 25px;
+  position: absolute;
+  bottom: 350px;
+}
+
+.arrow-icon-image3 {
+  right: 282px;
+  color: rgb(139, 0, 252);
+  font-size: 25px;
+  position: absolute;
+  bottom: 0px;
+}
