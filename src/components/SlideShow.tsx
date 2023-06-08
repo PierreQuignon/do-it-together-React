@@ -4,7 +4,6 @@ import "../style/Slide.css";
 import "react-slideshow-image/dist/styles.css";
 import { Cloudinary } from "@cloudinary/url-gen";
 import { AdvancedImage } from "@cloudinary/react";
-import { fill } from "@cloudinary/url-gen/actions/resize";
 
 const proprietes = {
   autoplay: false,
@@ -23,10 +22,6 @@ const SlideShow: FC = () => {
   const menuiserie1 = cld.image("dit/menuiserie");
   const menuiserie2 = cld.image("dit/menuiserie-2");
   const menuiserie3 = cld.image("dit/menuiserie-3");
-
-  menuiserie1.resize(fill().width(750).height(450));
-  menuiserie2.resize(fill().width(750).height(450));
-  menuiserie3.resize(fill().width(750).height(450));
 
   return (
     <div className="slide-container">

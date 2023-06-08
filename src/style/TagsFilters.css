@@ -1,6 +1,27 @@
+.btn-tags-filters {
+  background-color: initial;
+  border-radius: 10px;
+  box-shadow: rgba(245, 244, 247, .25) 0 1px 1px inset;
+  color: #760be0;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter, sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 7px;
+  outline: 0;
+  text-align: center;
+  transition: all .3s cubic-bezier(.05, .03, .35, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: bottom;
+  margin: 3px;
+}
+
 .toggled-class {
   background-color: initial;
-  background-image: linear-gradient(#2b0154 0, #760be0 100%);
+  background-image: linear-gradient(#7a22d3 0, #760be0 100%);
   border-radius: 10px;
   border-style: none;
   box-shadow: rgba(245, 244, 247, .25) 0 1px 1px inset;

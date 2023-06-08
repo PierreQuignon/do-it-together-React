@@ -30,16 +30,16 @@ const TagsFilters: FC<categoriesProps> = ({
   return (
     <>
       <div className="tags-categories-container">
-        <button className={mecaToggled? 'toggled-class': 'btn-style-1'} onClick={() => {addCategory("Mécanique"); setMecaToggled(prevState => !prevState)}}>
+        <button className={mecaToggled? 'toggled-class': 'btn-tags-filters'} onClick={() => {addCategory("Mécanique"); setMecaToggled(prevState => !prevState)}}>
           Mécanique
         </button>
-        <button className={menuiToggled? 'toggled-class': 'btn-style-1'} onClick={() => {addCategory("Menuiserie"); setMenuiToggled(prevState => !prevState)}}>
+        <button className={menuiToggled? 'toggled-class': 'btn-tags-filters'} onClick={() => {addCategory("Menuiserie"); setMenuiToggled(prevState => !prevState)}}>
           Menuiserie
         </button>
-        <button className={geneToggled? 'toggled-class': 'btn-style-1'} onClick={() => {addCategory("Général"); setGeneToggled(prevState => !prevState)}}>
+        <button className={geneToggled? 'toggled-class': 'btn-tags-filters'} onClick={() => {addCategory("Général"); setGeneToggled(prevState => !prevState)}}>
           Général
         </button>
-        <button className={sculToggled? 'toggled-class': 'btn-style-1'} onClick={() => {addCategory("Sculpture"); setSculToggled(prevState => !prevState)}}>
+        <button className={sculToggled? 'toggled-class': 'btn-tags-filters'} onClick={() => {addCategory("Sculpture"); setSculToggled(prevState => !prevState)}}>
           Scupture
         </button>
         <button
