@@ -4,25 +4,31 @@ import { AdvancedImage } from "@cloudinary/react";
 import { fill } from "@cloudinary/url-gen/actions/resize";
 import { HiArrowsExpand } from "react-icons/hi";
 import "../style/Gallery.css";
+import { Workshop as workshopType } from "../pages/Workshops";
 
-const Gallery: FC = () => {
+interface WorkshopProps {
+  workshop: workshopType;
+}
+
+
+const Gallery: FC<WorkshopProps> = ({workshop}) => {
   const cld = new Cloudinary({
     cloud: {
       cloudName: "dhc7v7ktf",
     },
   });
 
-  const menuiserie1 = cld.image("dit/menuiserie");
-  const menuiserie2 = cld.image("dit/menuiserie-2");
-  const menuiserie3 = cld.image("dit/menuiserie-3");
+  const imageGallery1 = cld.image(workshop.image1);
+  const imageGallery2 = cld.image(workshop.image2);
+  const imageGallery3 = cld.image(workshop.image3);
 
-  menuiserie1.resize(fill().width(750).height(450));
-  menuiserie2.resize(fill().width(750).height(450));
-  menuiserie3.resize(fill().width(750).height(450));
+  imageGallery1.resize(fill().width(750).height(450));
+  imageGallery2.resize(fill().width(750).height(450));
+  imageGallery3.resize(fill().width(750).height(450));
 
-  const [picture1, setPicture1] = useState(menuiserie1);
-  const [picture2, setPicture2] = useState(menuiserie2);
-  const [picture3, setPicture3] = useState(menuiserie3);
+  const [picture1, setPicture1] = useState(imageGallery1);
+  const [picture2, setPicture2] = useState(imageGallery2);
+  const [picture3, setPicture3] = useState(imageGallery3);
 
   function switchPicture2() {
     setPicture1(picture2);

@@ -10,6 +10,21 @@
   margin: 3px;
 }
 
+.btn-tags-filters:hover {
+  background-image: linear-gradient(#8827e9 0, #750be09b 100%);
+  border-radius: 10px;
+  border-style: none;
+  color: #fff;
+  font-family: Inter, sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 5px;
+  text-align: center;
+  transition: all .3s cubic-bezier(.05, .03, .35, 1);
+  margin: 3px;
+}
+
+
 .toggled-class {
   background-image: linear-gradient(#8827e9 0, #750be09b 100%);
   border-radius: 10px;

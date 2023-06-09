@@ -4,6 +4,7 @@ import "../style/Slide.css";
 import "react-slideshow-image/dist/styles.css";
 import { Cloudinary } from "@cloudinary/url-gen";
 import { AdvancedImage } from "@cloudinary/react";
+import { Workshop as workshopType } from "../pages/Workshops";
 
 const proprietes = {
   autoplay: false,
@@ -11,7 +12,11 @@ const proprietes = {
   transitionDuration: 500,
 };
 
-const SlideShow: FC = () => {
+interface WorkshopProps {
+  workshop: workshopType;
+}
+
+const SlideShow: FC<WorkshopProps> = ({workshop}) => {
 
   const cld = new Cloudinary({
     cloud: {
@@ -19,26 +24,26 @@ const SlideShow: FC = () => {
     },
   });
 
-  const menuiserie1 = cld.image("dit/menuiserie");
-  const menuiserie2 = cld.image("dit/menuiserie-2");
-  const menuiserie3 = cld.image("dit/menuiserie-3");
+  const imageSlide1 = cld.image(workshop.image1);
+  const imageSlide2 = cld.image(workshop.image2);
+  const imageSlide3 = cld.image(workshop.image3);
 
   return (
     <div className="slide-container">
       <Slide {...proprietes}>
         <div className="each-slide">
           <div>
-            <AdvancedImage cldImg={menuiserie1} className="img-slide" />
+            <AdvancedImage cldImg={imageSlide1} className="img-slide" />
           </div>
         </div>
         <div className="each-slide">
           <div>
-            <AdvancedImage cldImg={menuiserie2} className="img-slide" />
+            <AdvancedImage cldImg={imageSlide2} className="img-slide" />
           </div>
         </div>
         <div className="each-slide">
           <div>
-            <AdvancedImage cldImg={menuiserie3} className="img-slide" />
+            <AdvancedImage cldImg={imageSlide3} className="img-slide" />
           </div>
         </div>
       </Slide>

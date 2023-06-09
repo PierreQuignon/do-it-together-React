@@ -102,7 +102,7 @@ const Workshop: FC = () => {
                 </button>
               </div>
             </div>
-            <Gallery />
+            <Gallery workshop={workshop}/>
             <p className="workshop-content">{workshop.content}</p>
             <div className="btn-booking-and-info-renter">
               <div className="renter-info-container">

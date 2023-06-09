@@ -29,6 +29,9 @@ export interface Workshop {
   parking: boolean;
   wifi: boolean;
   soundproof: boolean;
+  image1: string;
+  image2: string;
+  image3: string;
 }
 
 const Workshops: FC = () => {
@@ -73,7 +76,7 @@ const Workshops: FC = () => {
       <div className="workshops-container">
         {filteredWorkshops.map((workshop) => (
           <div key={workshop.id} className="slideshow-and-content">
-            <SlideShow />
+            <SlideShow workshop={workshop}/>
             <Link to={`/workshop/${workshop.id}`}>
               <WorkshopCard workshop={workshop} />
             </Link>
